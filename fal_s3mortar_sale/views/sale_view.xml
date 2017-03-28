@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    	 <record id="view_so_inherit" model="ir.ui.view">
+            <field name="name">sale.order.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="/form/sheet/notebook/page[1]/group[@name='sale_total']/field[@name='amount_untaxed']" position="before">
+            		<field name="gross_total"  widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            		<field name="disc_total" style="border-bottom:1px solid black" class="oe_subtotal_footer" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            	</xpath>
+            	<xpath expr="/form/sheet/notebook/page[1]/field[@name='note']" position="replace">
+            		<group>
+            		<field name="amount_in_words" />
+            		<field name="note"/>
+            		</group>
+            	</xpath>
+                <xpath expr="//field[@name='team_id']" position="replace">
+                </xpath>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="team_id"/>
+                    <label for="package_id"/>
+                    <div class="o_row">
+                        <field name="package_id" attrs="{'invisible': [('team_id','=',False)]}"/>
+                        <button name="load_package" type="object" string="Load Package" class="oe_highlight"/>
+                    </div>
+                </xpath>
+            	
+            </field>
+    </record>
+    
+    </data>
+</odoo>

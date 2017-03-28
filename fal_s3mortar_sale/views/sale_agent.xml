@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- view form config package -->
+        <record id="view_sale_agent_form" model="ir.ui.view">
+            <field name="name">sale.agent.form</field>
+            <field name="model">sale.agent</field>
+            <field name="arch" type="xml">
+                <form string="Sale Agent Request">
+                    <header>
+                        <button name="create_invoice" type="object" string="Create Invoice DP" class="oe_highlight"/>
+                    </header>
+                   <sheet>
+                        <div>
+                            <label string="Package Name"/>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                       <group>
+                            <group>
+                            <field name="partner_id"/>
+                            <field name="team_id"/>
+                            <field name="dp_amount"/>
+                        </group>
+                            <group>
+                                <field name="dp_account"/>
+                                <field name="invoice_id"/>
+                            </group>
+                       </group>
+                       <notebook>
+                            <page string="Product List">
+                               
+                                    <field name="product_ids" nolabel="1">
+                                        <tree string="Product" editable="bottom">
+                                            <field name="product_id"/>
+                                            <field name="product_uom_qty"/>
+                                            <field name="product_uom"/>
+                                            <field name="price_unit"/>
+                                            <field name="tax_id" widget="many2many_tags"/>
+                                        </tree>
+                                    </field>
+                            </page>
+                       </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- view form config package -->
+        <record id="view_sale_agent_tree" model="ir.ui.view">
+            <field name="name">sale.agent.tree</field>
+            <field name="model">sale.agent</field>
+            <field name="arch" type="xml">
+                <tree string="Sale Package">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="team_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_agent_action" model="ir.actions.act_window">
+            <field name="name">Sale Deposit</field>
+            <field name="res_model">sale.agent</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to record a new sale Deposit
+              </p>
+            </field>
+        </record>
+
+        <menuitem action="view_sale_agent_action" id="menu_action_sale_agent" parent="sales_team.menu_sales" sequence="13"/>
+
+</odoo>
