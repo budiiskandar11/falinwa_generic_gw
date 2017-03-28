@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    	<!-- inherit product_template view -->
+
+        <record id="product_fleet_view" model="ir.ui.view">
+            <field name="name">product_fleet.product.form.view</field>
+            <field name="model">product.template</field>
+            <field name="priority">3</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="groups_id" eval=""/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="fleet_available_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

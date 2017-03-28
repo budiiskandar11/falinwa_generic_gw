@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- inherit product_template view -->
+        <record id='fleet_vehicle_model_view_form2' model='ir.ui.view'>
+            <field name="name">fleet.vehicle.model.form</field>
+            <field name="model">fleet.vehicle.model</field>
+            <field name="arch" type="xml">
+                <form string="Model">
+                    <field name="image_medium" widget='image' class="oe_avatar"/>
+                    <div class="oe_title">
+                        <label for="modelname" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Model S"/>
+                        </h1>
+                        <label for="brand_id" class="oe_edit_only"/>
+                        <h2>
+                            <field name="brand_id" placeholder="e.g. Tesla"/>
+                        </h2>
+                    </div>
+                    <notebook>
+                        <page string="Tire Available">
+                            <field name="tire_available_ids" widget="many2many_kanban">
+                                <kanban quick_create="false" create="true">
+                                    <field name="name"/>
+                                    <field name="image_medium"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            
+                                            <div style="position: relative">
+                                                <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>
+                                                <div class="oe_module_vignette">
+                                                    <div class="o_kanban_image">
+                                                
+                                                    <img t-att-src="kanban_image('product.template', 'image_medium')"/>
+                                               
+                                            </div>
+                                                    <div class="oe_kanban_details">
+                                                        <field name="name"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+
+
+        <record id='fleet_vehicle_model_action2' model='ir.actions.act_window'>
+            <field name="name">Vehicle Model</field>
+            <field name="res_model">fleet.vehicle.model</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fleet_vehicle_model_view_form2"/>
+            <field name="context">{"search_default_groupby_brand" : True,}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new model.
+              </p><p>
+                You can define several models (e.g. A3, A4) for each make (Audi).
+              </p>
+            </field>
+        </record>
+        <record id="action_fleet_form_view2" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="fleet_vehicle_model_view_form2"/>
+            <field name="act_window_id" ref="fleet_vehicle_model_action2"/>
+        </record>
+        <record id="action_fleet_tree_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="fleet.fleet_vehicle_model_view_tree"/>
+            <field name="act_window_id" ref="fleet_vehicle_model_action2"/>
+        </record>
+
+        <menuitem action="fleet_vehicle_model_action2" parent="sales_team.menu_sale_config" id="fleet_vehicle_model_menu2" groups="base.group_no_one"/>
+
+    </data>
+</odoo>

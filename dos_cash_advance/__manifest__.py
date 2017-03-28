@@ -8,7 +8,7 @@
     """,
     "depends": ['dos_partner_indonesia','account'],
      'data': [
-       
+       'views/advance_sequence.xml',
        'views/expense_type_view.xml',
        'views/advance_view.xml',
        'views/settlement_view.xml',

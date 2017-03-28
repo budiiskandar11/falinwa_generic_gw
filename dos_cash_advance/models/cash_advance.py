@@ -41,7 +41,7 @@ class CashAdvance(models.Model):
     
     
     description = fields.Char(string='Description', size=256, required=True ,readonly=True, states={'draft': [('readonly', False)]})
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', default='New')
     responsible = fields.Many2one('res.users', string="Responsible", default=lambda self: self.env.user)
     partner_id = fields.Many2one('res.partner', string="Partner", domain="[('is_employee','=',True)]")
     date = fields.Date(string='Date', readonly=True, select=True, states={'draft': [('readonly', False)]}, help="Effective date for accounting entries", default=lambda self: fields.Date.from_string(fields.Date.context_today(self)))
@@ -64,7 +64,7 @@ class CashAdvance(models.Model):
             ], 'State', readonly=True, size=32, default='draft',
             help='')
     
-    account_advance_id = fields.Many2one('account.account', string='Advance Account', required=False)    
+    account_advance_id = fields.Many2one('account.account', string='Advance Account', required=True)
 #         'create_uid'    : fields.many2one('res.users','Create By'),
 #         'date_create'   : fields.datetime('Date Create'),
 #         'advance_type'  : fields.many2one('cash.advance.type', 'Type Advance'),
@@ -78,6 +78,12 @@ class CashAdvance(models.Model):
     def _onchange_journal_id(self):
         if self.journal_id:
             self.currency_id = self.journal_id.currency_id.id or self.journal_id.company_id.currency_id.id
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        print "xxxxxxx"
+        if self.partner_id:
+            self.account_advance_id = self.partner_id.property_account_receivable_id.id
 
 
     @api.multi
@@ -149,7 +155,10 @@ class CashAdvance(models.Model):
     
     @api.multi
     def propose(self):
-        return self.write({'state': 'confirm'})
+        name=False
+        if self.name =='New' :
+            name = self.env['ir.sequence'].next_by_code('advance.code')
+        return self.write({'state': 'confirm','name':name})
 
     @api.multi
     def approve2(self):
@@ -158,13 +167,22 @@ class CashAdvance(models.Model):
     @api.multi
     def approve(self):
         return self.write({'state': 'proforma'})
+
+    @api.multi
+    def setdraft(self):
+        return self.write({'state': 'draft'})
+
+    @api.multi
+    def cancel(self):
+        return self.write({'state': 'cancel'})
     
     @api.multi
     def validate(self):
+        print "kesini"
         # lots of duplicate calls to action_invoice_open, so we remove those already open
-        advance_obj = self.filtered(lambda inv: inv.state == 'draft')
-        advance_obj.create_move()
-        advance_obj.create_settlement()
+        # advance_obj = self.filtered(lambda inv: inv.state == 'approve')
+        self.create_move()
+        self.create_settlement()
         
         return self.write({'state': 'posted'})
           

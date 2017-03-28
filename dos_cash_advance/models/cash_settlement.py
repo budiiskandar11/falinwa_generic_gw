@@ -15,7 +15,8 @@ import odoo.addons.decimal_precision as dp
 
 class CashSettlement(models.Model):
     _name ="cash.settlement"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'ir.needaction_mixin', 'utm.mixin']
+    _mail_mass_mailing = _('Shipping')
     _description ="Advance Settlements"
     
     
