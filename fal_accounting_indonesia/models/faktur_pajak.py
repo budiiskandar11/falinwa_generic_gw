@@ -13,8 +13,8 @@ from odoo.tools.misc import formatLang
 from odoo.exceptions import UserError, RedirectWarning, ValidationError
 
 import odoo.addons.decimal_precision as dp
-from mx.TextTools.Examples.Python import string
-from Carbon.Aliases import false
+# from mx.TextTools.Examples.Python import string
+# from Carbon.Aliases import false
 
 
 class FakturPajak(models.Model):
