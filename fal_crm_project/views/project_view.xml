@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_project_falcrmpro" model="ir.ui.view">
+            <field name="name">project.project.tree.falcrmpro</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="complete_name" />
+                </field>
+            </field>
+        </record>
+
+        <record id="edit_project_falcrmpro" model="ir.ui.view">
+            <field name="name">project.project.form.falcrmpro</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.edit_project"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_set_draft" string="Set to Draft" type="object" attrs="{'invisible': ['|', ('fal_level_4_hide_flag', '=', True), ('state', '=', 'draft')]}" class="oe_highlight"/>
+                    <button name="action_set_preaffaire" string="Set to Pre-Affaire" type="object" attrs="{'invisible': ['|', ('fal_level_4_hide_flag', '=', True), ('state', '=', 'pending')]}" class="oe_highlight"/>
+                    <button name="action_set_open" string="Set to In Progress" type="object" attrs="{'invisible': ['|', ('fal_level_4_hide_flag', '=', True), ('state', '=', 'open')]}" class="oe_highlight"/>
+                    <button name="action_set_close" string="Set to Close" type="object" attrs="{'invisible': ['|', ('fal_level_4_hide_flag', '=', True), ('state', '=', 'close')]}" class="oe_highlight"/>
+                    <button name="action_set_cancelled" string="Set to Cancel" type="object" attrs="{'invisible': ['|', ('fal_level_4_hide_flag', '=', True), ('state', '=', 'cancelled')]}" class="oe_highlight"/>
+                </xpath>
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar"/>
+                </field>
+                <xpath expr="//div[@name='options_active']" position="inside">
+                    <div>
+                        <field name="fal_is_chiffrage" class="oe_inline"/>
+                        <label for="fal_is_chiffrage" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <field name="fal_is_affaire" class="oe_inline"/>
+                        <label for="fal_is_affaire" class="oe_inline"/>
+                    </div>
+                    <div invisible="1">
+                        <field name="fal_is_phase" class="oe_inline"/>
+                        <label for="fal_is_phase" class="oe_inline"/>
+                    </div>
+                </xpath>
+                <field name="privacy_visibility" position="before">
+                    <field name="complete_name"/>
+                    <field name="fal_level_4_hide_flag" invisible="1"/>
+                </field>
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="fal_origin_lead_id" />
+                    <field name="fal_project_template_id" />
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="groups"></attribute>
+                </xpath>
+                <xpath expr="//notebook/page/group[1]" position="after">
+                    <group>
+                        <field name="child_ids" readonly="1" nolabel="1" colspan="4">
+                            <tree string="Children">
+                                <field name="name"/>
+                                <field name="complete_name"/>
+                            </tree>
+                        </field>
+                        <field name="fal_lead_ids" nolabel="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_project_kanban_falcrmpro">
+            <field name="name">project.project.kanban.falcrmpro</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="arch" type="xml">
+                <field name="doc_count" position="after">
+                    <field name="complete_name"/>
+                </field>
+                <xpath expr="//div[@t-if='record.alias_name.value and record.alias_domain.value']" position="after">
+                    <div>
+                        <span><t t-esc="record.complete_name.value"/></span>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project.open_view_project_all" model="ir.actions.act_window">
+            <field name="name">Projects</field>
+            <field name="res_model">project.project</field>
+            <field name="view_type">form</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form,pivot</field>
+            <field name="search_view_id" ref="project.view_project_project_filter"/>
+            <field name="context">{'search_default_Current': 1}</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Sorry!
+                </p><p>
+                    No project is qualified for your Caisse Régionale
+                </p>
+            </field>
+        </record>
+
+        <record id="view_project_search_fal" model="ir.ui.view">
+            <field name="name">view_project_search_fal</field>
+            <field name="model">project.project</field>
+            <field name="inherit_id" ref="project.view_project_project_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="filter_domain">['|','|',('name','ilike',self), ('code','ilike',self),('complete_name','ilike',self)]</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_analytic_account_form_fal_crm_project" model="ir.ui.view">
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="name">account.analytic.account.form.falcrmpro</field>
+            <field name="model">account.analytic.account</field>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="fal_old_code"/>
+                </field>
+                <field name="partner_id" position="after">
+                    <field name="fal_is_affaire"/>
+                    <field name="fal_is_phase"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

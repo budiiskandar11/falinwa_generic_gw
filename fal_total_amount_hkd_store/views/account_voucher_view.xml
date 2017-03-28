@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_voucher_tree_fal_hkd" model="ir.ui.view">
+            <field name="name">account.voucher.tree.fal.hkd</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount" position="before">
+                        <field name="amount_total_hkd" sum="Total in HKD"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="account_cash_statement_graph_fal_hkd" model="ir.ui.view">
+            <field name="name">account.voucher.graph.fal.hkd</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.account_cash_statement_graph"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount" operator="+" position="replace">
+                        <field name="amount_total_hkd" operator="+" />
+                    </field>
+                </data>
+            </field>
+         </record>
+
+    </data>
+</odoo>

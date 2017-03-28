@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_invoice_tree_fal_hkd" model="ir.ui.view">
+            <field name="name">account.invoice.tree.fal.hkd</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="currency_id" groups="base.group_multi_currency" position="after">
+                        <field name="amount_ballance_hkd" sum="Balance in HKD"/>
+                        <field name="untaxed_amount_hkd" sum="Subtotal in HKD"/>
+                        <field name="amount_total_hkd" sum="Total in HKD"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_invoice_graph_fal_hkd">
+            <field name="name">account.invoice.graph.fal.hkd</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_invoice_graph"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total_signed" type="measure" position="replace">
+                        <field name="amount_total_hkd" type="measure" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_move_line_tree_fal_hkd">
+            <field name="name">account.move.line.tree.fal.hkd</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_currency" position="attributes">
+                        <data>
+                            <attribute name="invisible">0</attribute>
+                            <attribute name="sum">Total Amount</attribute>
+                        </data>
+                    </field>
+                    <field name="currency_id" position="attributes">
+                        <attribute name="invisible">0</attribute>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_move_line_tree_fal_hkd" model="ir.ui.view">
+            <field name="name">account.move.line.tree.fal.hkd</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="move_id" position="after">
+                        <field name="fal_debit_hk" readonly="1" sum="Total Debit(HKD)" />
+                        <field name="fal_credit_hk" readonly="1" sum="Total Credit(HKD)" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

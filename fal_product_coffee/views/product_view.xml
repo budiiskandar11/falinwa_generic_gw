@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    	<!-- inherit product_template view -->
+
+        <record id="product_coffee_view" model="ir.ui.view">
+            <field name="name">product_coffee.product.form.view</field>
+            <field name="model">product.template</field>
+            <field name="priority">3</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view" />
+            <field name="groups_id" eval=""/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='notes']" position="before">
+                    <page string="Coffee">
+                        <group>
+                            <group>
+                                <field name="currency2_id"/>
+                                <field name="current_sale_price" widget='monetary' options="{'currency_field': 'currency2_id'}"/>
+                            </group>
+                            <group>
+                                <field name="variety"/>
+                                <field name="grade"/>
+                                <field name="origin"/>
+                            </group>
+
+                        </group>
+                        <group>
+                            <field name="sale_price_ids" nolabel="1" >
+                                <tree string="Sale Prices" editable="bottom">
+                                    <field name="date"/>
+                                    <field name="currency_id"/>
+                                    <field name="rate"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+
+        <record id="coffee_pricelist_view" model="ir.ui.view">
+            <field name="name">Coffee Price List</field>
+            <field name="model">product.sale.price</field>
+            <field name="arch" type="xml">
+                <form string="Cash Advance">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_tmp_id"/>
+                                <field name="currency_id"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="rate"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="coffee_pricelist_view_tree" model="ir.ui.view">
+            <field name="name">Coffee Price List Tree</field>
+            <field name="model">product.sale.price</field>
+            <field name="arch" type="xml">
+                <tree string="Coffee Price">
+                        <field name="product_tmp_id"/>
+                        <field name="date"/>
+                        <field name="currency_id"/>
+                        <field name="rate"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id='coffee_price_action' model='ir.actions.act_window'>
+            <field name="name">Coffee Daily Rate</field>
+            <field name="res_model">product.sale.price</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Advance.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem action="coffee_price_action" id="menu_product_price" parent="purchase.menu_procurement_management" sequence="14" />
+
+    </data>
+</odoo>

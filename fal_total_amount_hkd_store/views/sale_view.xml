@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_order_tree_fal_hkd" model="ir.ui.view">
+            <field name="name">sale.order.tree.fal.hkd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" position="before">
+                        <field name="untaxed_amount_hkd" sum="Subtotal in HKD"/>
+                        <field name="amount_total_hkd" sum="Total in HKD"/>
+                    </field>
+                    <field name="amount_total" position="after">
+                        <field name="currency_id" string="Order Currency" />
+                        <field name="total_uninvoice_hkd" sum="Total uninvoice in HKD"/>
+                        <field name="total_uninvoice" sum="Total uninvoice"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_fal_hkd" model="ir.ui.view">
+            <field name="name">quotation.order.tree.fal.hkd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" position="before">
+                        <field name="untaxed_amount_hkd" sum="Subtotal in HKD"/>
+                        <field name="amount_total_hkd" sum="Total in HKD"/>
+                    </field>
+                    <field name="amount_total" position="after">
+                        <field name="currency_id" string="Order Currency" />
+                        <field name="total_uninvoice_hkd" sum="Total uninvoice in HKD"/>
+                        <field name="total_uninvoice" sum="Total uninvoice"/>
+                    </field>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_sale_order_graph_fal_hkd">
+            <field name="name">sale.order.graph.fal.hkd</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sale_order_graph"/>
+            <field name="arch" type="xml">
+                <data>
+                    <field name="amount_total" operator="+" position="replace">
+                        <field name="amount_total_hkd" operator="+" />
+                    </field>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="asalan_tree_view" model="ir.ui.view">
+            <field name="name">Asalan Tree View</field>
+            <field name="model">asalan</field>
+            <field name="arch" type="xml">
+                <tree string="list Asalan Purchase">
+                    <field name="name"/>
+                    <field name="date" />
+                    <field name="truck_no"/>
+                    <field name="partner_id"/>
+                    <field name="allocated_partner_id" /> 
+                    <field name="purchase_id" />       
+                    <field name="price_id" />    
+                    <field name="state" />
+                </tree>
+            </field>
+        </record>
+
+    <record id="asalan_form_view" model="ir.ui.view">
+            <field name="name">Asalan Form View</field>
+            <field name="model">asalan</field>
+            <field name="arch" type="xml">
+                <form string="Asalan Purchases">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                        <label for="name" string="Truck Registration" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="advance number" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date" />
+                        </group>
+                        <group>
+                            <field name="user_id" string="Responsible"/>
+                        </group>
+                    </group>
+                    <group>
+                       
+                                <label for="truck_prefix" string="Truck No"/>
+                            <div class="o_address_format"><field name="truck_prefix" placeholder="BE" class="oe_inline"/><field name="truck_no" placeholder="1234" class="oe_inline"/><field name="truck_suffix" class="oe_inline" placeholder="AB"/></div>
+                            
+                       
+                    </group>
+                    <group>
+                        <group>
+                            <field name="partner_id"/>
+                            <field name="allocated_partner_id" /> 
+                            
+                        </group>
+                        <group>
+                            <field name="has_purchase"/>
+                            <field name="purchase_id" attrs="{'invisible': [('has_purchase', '=', False)]}" domain="[('partner_id','=',partner_id)]"/>
+                            <field name="estimated_qty"/>
+                            <field name="price_id" string="Price"/> 
+                        </group>
+                    </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='asalan_action' model='ir.actions.act_window'>
+            <field name="name">Asalan Purchase</field>
+            <field name="res_model">asalan</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Advance.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem action="asalan_action" id="menu_asalan" parent="purchase.menu_procurement_management" sequence="15" />
+
+
+
+
+
+</odoo>

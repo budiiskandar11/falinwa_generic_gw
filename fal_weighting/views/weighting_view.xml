@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+			<!-- view weighting -->
+		
+
+        <record id='weighting_sheet_tree_view' model='ir.ui.view'>
+            <field name="name">Weighting Sheet tree</field>
+            <field name="model">product.weighting</field>
+            <field name="arch" type="xml">
+            	<tree string="Weighting">
+	            				<field name="date"/>
+	            				<field name="partner_id"/>
+	            				<field name="partner_number"/>
+	            				<field name="date_start"/>
+            					<field name="date_start"/>
+            					<field name="total_weight"/>
+            	</tree>
+            </field>
+        </record>
+
+        <record id='weighting_sheet_form_view' model='ir.ui.view'>
+            <field name="name">Weighting Sheet Form</field>
+            <field name="model">product.weighting</field>
+            <field name="arch" type="xml">
+            	<form string="Weighting">
+            		<sheet>
+                        <div class="oe_title">
+                        <label for="partner_id" class="oe_edit_only"/>
+                        <h1><field name="partner_id" class="oe_inline" placeholder="Partner Name"/></h1>
+                        <field name="partner_number" invisible="1"/>
+                    </div>
+            			<group>
+            				<group>
+	            				<label for="date_start" string="Weighting Period"/>
+                            <div><field name="date_start" class="oe_inline"/> to <field name="date_end" class="oe_inline"/></div>
+                            <field name="name" invisible="1"/>
+	            			</group>
+	            			<group>
+            					<field name="total_weight"/>
+            				</group>
+            			</group>
+            			<notebook>
+            				<page string="Details">
+            					
+            						<field name="line_ids" nolabel="1"/>
+                                
+            				</page>
+            			</notebook>
+                    </sheet>
+            	</form>
+            </field>
+        </record>
+
+		<record id='weighting_sheet_tree_view' model='ir.ui.view'>
+            <field name="name">Weighting Sheet Tree</field>
+            <field name="model">product.weighting</field>
+            <field name="arch" type="xml">
+            	<tree string="Weighting">
+            					<field name="name"/>
+	            				<field name="date"/>
+	            				<field name="partner_id"/>
+	            				<field name="partner_number"/>
+	            				<field name="date_start"/>
+            					<field name="date_start"/>
+            					<field name="total_weight"/>
+            	</tree>
+            </field>
+        </record>
+
+        <record id='weighting_form_view' model='ir.ui.view'>
+            <field name="name">Weighting View Form</field>
+            <field name="model">weighting.lines</field>
+            <field name="arch" type="xml">
+                <form string="Weighting Lines">
+                    <header>
+                        <button name="propose" type="object" states="draft" string="Check In" class="oe_highlight"/>
+                        <button name="done" type="object" states="in" string="Check Out" class="oe_highlight"/>
+                         <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                        <label for="partner_id" class="oe_edit_only"/>
+                        <h1><field name="partner_id" class="oe_inline" placeholder="Partner Name"/></h1>
+                        <h3><field name="truck_no" placeholder="Truck License Plate"/></h3>
+                        <h3><field name="weighting_id" string="Weighting Sheet"/></h3>
+                    </div>
+                        <group>
+                            <group>
+                                <field name="check_in"/>
+                                <field name="weight_in"/>
+                            </group>
+                            <group>
+                                <field name="check_out"/>
+                                <field name="weight_out"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id='weighting_tree_view' model='ir.ui.view'>
+            <field name="name">Weighting View tree</field>
+            <field name="model">weighting.lines</field>
+            <field name="arch" type="xml">
+                <tree string="Weighting">
+                        <field name="truck_no"/>
+                        <field name="partner_id"/>
+                        <field name="check_in"/>
+                        <field name="weight_in"/>
+                        <field name="check_out"/>
+                        <field name="weight_out"/>
+                        <field name="total_weight"/>
+                        <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id='weighting_kanban_view' model='ir.ui.view'>
+            <field name="name">Weighting View Kanban</field>
+            <field name="model">weighting.lines</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="truck_no"/>
+                        <field name="partner_id"/>
+                        <field name="check_in"/>
+                        <field name="weight_in"/>
+                        <field name="check_out"/>
+                        <field name="weight_out"/>
+                        <field name="total_weight"/>
+                        <field name="state"/>
+                        <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <strong><span><t t-esc="record.partner_id.value"/></span></strong>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <strong><span class="pull-right text-right"><t t-esc="record.truck_no.value"/></span></strong>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-muted">
+                                        <span><t t-esc="record.check_in.value"/> </span>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <span t-attf-class="pull-right text-right label #{['draft'].indexOf(record.state.raw_value) &gt; -1 ? 'label-default' : ['none'].indexOf(record.state.raw_value) &gt; -1 ? 'label-warning' : ['check_in'].indexOf(record.state.raw_value) &gt; -1 ? 'label-success' : ['check_out'].indexOf(record.state.raw_value) &gt; -1 ? 'label-success' : 'label-warning'}"><t t-esc="record.state.value"/></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </t>
+                   
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Actions Weighting Sheet-->
+        <record id='weighting_sheet_action' model='ir.actions.act_window'>
+            <field name="name">Wighting Sheet</field>
+            <field name="res_model">product.weighting</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Weighting.
+              </p>
+            </field>
+        </record>
+
+        <record id='weighting_line_action' model='ir.actions.act_window'>
+            <field name="name">Wighting</field>
+            <field name="res_model">weighting.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Weighting.
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Weighting" id="menu_root" groups="" sequence="119" web_icon="fal_weighting,static/description/icon.png"/>
+
+        <menuitem name="Weighting" id="menu_weighting" groups="" sequence="5" parent="fal_weighting.menu_root"/>
+
+        <menuitem name="Weighting Sheet" id="menu_weighting_sheet" groups="" sequence="6" parent="fal_weighting.menu_root"/>
+
+        <menuitem name="Weighting" id="weighting_lines" parent="fal_weighting.menu_weighting" action="weighting_line_action"/>
+
+        <menuitem name="Weighting Sheet" id="product_weighting" parent="fal_weighting.menu_weighting_sheet" action="weighting_sheet_action"/>
+
+        <!-- Action Weight In -->
+        
+        <record id='weighting_line_action_in' model='ir.actions.act_window'>
+            <field name="name">Wighting In</field>
+            <field name="res_model">weighting.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('state','=','draft')]</field>
+            <field name="context">{"default_state":'draft'}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Weighting.
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Weighting In" id="weighting_lines_in" parent="fal_weighting.menu_root" sequence="1" action="weighting_line_action_in"/>
+
+      <record id='weighting_line_action_out' model='ir.actions.act_window'>
+            <field name="name">Wighting Out</field>
+            <field name="res_model">weighting.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('state','=','in')]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new Weighting.
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Weighting Out" id="weighting_lines_out" parent="fal_weighting.menu_root" action="weighting_line_action_out" sequence="2"/> 
+ 
+
+
+	</data>
+</odoo>

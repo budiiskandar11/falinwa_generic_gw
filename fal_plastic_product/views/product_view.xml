@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    	<!-- inherit product_template view -->
+
+        <record id="product_plastic_view" model="ir.ui.view">
+            <field name="name">product_plastic.product.form.view</field>
+            <field name="model">product.template</field>
+            <field name="priority">3</field>
+            <field name="inherit_id" ref="product.product_template_form_view" />
+            <field name="groups_id" eval=""/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='notes']" position="before">
+                    <page string="Spesification">
+                        <group>
+                            <group>
+                                <field name="length"/>
+                                <field name="width"/>
+                                <field name="density"/>
+                            </group>
+                            <group>
+                                <label string="Anyaman"/>
+                                <div class="oe_inline">
+                                    <field name="webx" class="oe_inline"/>x <field name="weby" class="oe_inline"/>
+                                </div>
+                                <field name="weigth_gr"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- <record id="product_normal_form_view_inherit2" model="ir.ui.view">
+            <field name="name">product.product.form</field>
+            <field name="model">product.product</field>
+            <field name="mode">primary</field>
+            <field eval="7" name="priority"/>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='notes']" position="before">
+                    <page string="Spesification">
+                        <group>
+                            <group>
+                                <field name="length"/>
+                                <field name="width"/>
+                                <field name="density"/>
+                            </group>
+                            <group>
+                                <label string="Anyaman"/>
+                                <div class="oe_inline">
+                                    <field name="webx" class="oe_inline"/>x <field name="weby" class="oe_inline"/>
+                                </div>
+                                <field name="weigth_gr"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record> -->
+
+
+    </data>
+</odoo>

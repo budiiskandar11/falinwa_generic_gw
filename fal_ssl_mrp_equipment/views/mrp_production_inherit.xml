@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- inherit MRP Producttion (Work Order) -->
+    <record model="ir.ui.view" id="mrp_production_workcenter_tree_view_inherit_fal">
+        <field name="name">mrp.production.work.order.tree.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workcenter_tree_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position='before'>
+                <field name="number"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="mrp_production_workcenter_form_view_inherit_fal">
+        <field name="name">mrp.production.work.order.form.inherit</field>
+        <field name="model">mrp.workorder</field>
+        <field name="inherit_id" ref="mrp.mrp_production_workcenter_form_view_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position='before'>
+                <field name="number"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

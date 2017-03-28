@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+	
+	
+		<record id='advance_form_view' model='ir.ui.view'>
+            <field name="name">Cash Advance View Form</field>
+            <field name="model">cash.advance</field>
+            <field name="arch" type="xml">
+            	<form string="Cash Advance">
+            		<header>
+                        <button name="propose" type="object" states="draft" string="Confirm" class="oe_highlight"/>
+                        <button name="approve" type="object" states="confirm" string="Approve2" class="oe_highlight"/>
+                        <button name="approve" type="object" states="draft" string="Approve" class="oe_highlight"/>
+            			<button name="validate" type="object" states="confirm" string="Validate" class="oe_highlight"/>
+
+            			 <field name="state" widget="statusbar" readonly="1"/>
+            		</header>
+            		
+                    <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="advance number"/>
+                        </h1>
+                    </div>
+                    	<group>
+                    		<group>
+                    		<field name="date"/>
+                    		<field name="responsible"/>
+                    		</group>
+                    	</group>
+                    	
+                    		<group>
+                    			<group>
+                    			<field name="partner_id" string="Partner"/>
+                    			<field name="description"/>
+                    			</group>
+                    		
+                    		<group>
+                    			<field name="journal_id"/>
+                    			<field name="account_advance_id" required="1"/>
+                    			<field name="currency_id"/>
+                    		</group>
+                    	</group>
+                    	<notebook>
+                    		<page string="Advance List">
+                    			<field name="line_ids">
+                    				<tree string="List" editable="bottom">
+                    					<field name="expense_type"/>
+                    					<field name="name"/>
+                    					<field name="amount"/>
+                    				</tree>
+                    			</field>
+                    			<group class="oe_subtotal_footer oe_right">
+                    				
+                                  	  <field name="amount_total"/>
+                                   
+                                </group>
+                    		</page>
+                    	</notebook>
+                    </sheet>
+            	
+            	</form>
+            </field>
+    </record>
+    
+    <record id='advance_tree_view' model='ir.ui.view'>
+            <field name="name">Cash Advance View Form</field>
+            <field name="model">cash.advance</field>
+            <field name="arch" type="xml">
+            	<tree string="Cash Advance">
+            		<field name="date"/>
+                    <field name="responsible"/>
+           			<field name="description"/>
+           			<field name="state"/>
+            	</tree>
+            </field>
+    </record>
+	
+	<record id='advance_action' model='ir.actions.act_window'>
+            <field name="name">Advances</field>
+            <field name="res_model">cash.advance</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new vehicle.
+              </p><p>
+                You will be able to manage your fleet by keeping track of the
+                contracts, services, fixed and recurring costs, odometers and
+                fuel logs associated to each vehicle.
+            </p><p>
+                Odoo will warn you when services or contract have to be
+                renewed.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem name="Advance" parent="dos_cash_advance.menu_root" id="cash_advance" sequence="2"/>
+        <menuitem action="advance_action" parent="cash_advance" id="advance_menu"/>
+
+
+
+</odoo>

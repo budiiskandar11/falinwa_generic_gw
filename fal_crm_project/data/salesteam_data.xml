@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+    	<record id="fal_hotline_sales_team" model="crm.team">
+            <field name="name">Hotline Sales</field>
+            <field name="active" eval="True"/>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="use_quotations" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+
+        <record id="fal_classic_sales_team" model="crm.team">
+            <field name="name">Classic Sales</field>
+            <field name="active" eval="True"/>
+            <field name="use_leads" eval="True"/>
+            <field name="use_opportunities" eval="True"/>
+            <field name="use_quotations" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

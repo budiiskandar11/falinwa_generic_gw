@@ -1,0 +1,188 @@
+<odoo>
+    <record id="fal_business_group_crm_lead" model="ir.ui.view">
+        <field name="name">fal_business_group_crm_lead</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="fal_business_group_id"/>
+            </field>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="fal_project_group_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fal_business_group_crm_lead_tree" model="ir.ui.view">
+        <field name="name">fal_business_group_crm_lead_tree</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="fal_business_group_id"/>
+            </field>
+            <field name="name" position="before">
+                <field name="partner_id"/>
+                <field name="fal_project_group_id"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="fal_business_group_crm_oppor_tree" model="ir.ui.view">
+        <field name="name">fal_business_group_crm_oppor_tree</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="fal_business_group_id"/>
+            </field>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="fal_project_group_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="fal_business_group_crm_oppor_form" model="ir.ui.view">
+        <field name="name">fal_business_group_crm_oppor_form</field>
+        <field name="model">crm.lead</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="fal_business_group_id"/>
+                <field name="company_id"/>
+            </field>
+            <xpath expr="//field[@name='company_currency']" position="after">
+                <field name="currency_id" class="oe_edit_only"/>
+            </xpath>
+            <xpath expr="//field[@name='planned_revenue']" position="replace">
+                <field name="planned_revenue" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="before">
+                <field name="fal_project_group_id"/>
+            </xpath>
+        </field>
+    </record>
+
+   
+
+    <record id="fal_business_group_form_view" model="ir.ui.view">
+        <field name="name">fal_business_group_form_view</field>
+        <field name="model">fal.business.group</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Business Group">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="sales_team_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        
+                        <field name="notes" nolabel="1" placeholder="Business Group Description"/>
+                    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fal_business_group_tree_view" model="ir.ui.view">
+        <field name="name">fal_business_group_tree_view</field>
+        <field name="model">fal.business.group</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Business Group">
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="sales_team_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fal_business_group_action" model="ir.actions.act_window">
+        <field name="name">Business Group</field>
+        <field name="res_model">fal.business.group</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        name="Business Group"
+        parent="sales_team.menu_sale_config"
+        action="fal_business_group_action"
+        id="fal_business_group_menuitem"/>
+
+
+    <record id="fal_crm_project_view" model="ir.ui.view">
+        <field name="name">fal_crm_project_form_view</field>
+        <field name="model">fal.crm.project</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Project Type">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" class="oe_inline"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="user_id"/>
+                            <field name="sales_team_id"/>
+                        </group>
+                    </group>
+                    <group>
+                        
+                        <field name="notes" nolabel="1" placeholder="Business Group Description"/>
+                    
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="fal_crm_project_tree_view" model="ir.ui.view">
+        <field name="name">fal_crm_project_tree_view</field>
+        <field name="model">fal.crm.project</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Project Group">
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="sales_team_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="fal_project_group_action" model="ir.actions.act_window">
+        <field name="name">Project Group</field>
+        <field name="res_model">fal.crm.project</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        name="Project CRM Group"
+        parent="sales_team.menu_sale_config"
+        action="fal_project_group_action"
+        id="fal_project_group_menuitem"/>
+
+
+</odoo>

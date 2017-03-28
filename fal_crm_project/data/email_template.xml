@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!--Email template -->
+        <record id="email_template_survey_form_question" model="mail.template">
+            <field name="name">Survey Form Question</field>
+            <field name="email_from">no-reply@gleize-energie.com</field>
+            <field name="subject">Your request to the CAM energy partner space</field>
+            <field name="email_to">${object.env['res.users'].browse(ctx.uid).partner_id.email}</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.fal_lead_sales_person_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                        <div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+                        <p>Come you to submit a question to the Energie Partner CAM space</p>
+                        <p>
+                            <b><u>Recap your request</u></b><br/>
+                            (recovery of form fields)
+                        </p>
+                        <p style="border-left: 1px solid #8e0000; margin-left: 30px;">
+                            <ul>
+                                <li>Subject: ${object.name}</li>
+                                <li>Your Question: <br/> ${object.description}</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Your request is tranmise the teams CAM Energy , who will address the best shots delays . See you soon on our partner space <br/>
+                            Reseller CAM Energie
+                        </p>
+                        <p>
+                            Partner Area CAM Energie<br/>
+                            espacepartenaire@cam-service.fr<br/>
+                            <img src="/gleize_website_ext/static/src/img/cam_company_logo.png"/>
+                        </p>
+                    </div>
+                ]]>
+            </field>
+        </record>
+
+        <record id="email_template_survey_form" model="mail.template">
+            <field name="name">Survey Form</field>
+            <field name="email_from">no-reply@gleize-energie.com</field>
+            <field name="subject">Your request to the CAM energy partner space</field>
+            <field name="email_to">${object.env['res.users'].browse(ctx.uid).partner_id.email}</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="lang">${object.fal_lead_sales_person_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                    <div style="font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; ">
+                        <p>Interest just submitted one or more project (s ) The named on the CAM energy partner space</p>
+                        <p>
+                            <b><u>Recap your request</u></b><br/>
+                            (recovery of form fields)
+                        </p>
+                        <p style="border-left: 1px solid #8e0000; margin-left: 30px;">
+                            <ul>
+                                <li>Project: ${object.name}</li>
+                                <li>Project Description: <br/> ${object.description}</li>
+                            </ul>
+                        </p>
+                        <p>
+                            Your request is tranmise the teams CAM Energy , who will address the best shots delays . See you soon on our partner space <br/>
+                            Reseller CAM Energie
+                        </p>
+                        <p>
+                            Partner Area CAM Energie<br/>
+                            espacepartenaire@cam-service.fr<br/>
+                            <img src="/gleize_website_ext/static/src/img/cam_company_logo.png"/>
+                        </p>
+                    </div>
+                ]]>
+            </field>
+        </record>
+    </data>
+</openerp>

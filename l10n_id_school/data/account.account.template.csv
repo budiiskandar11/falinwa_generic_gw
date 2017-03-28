@@ -1,0 +1,164 @@
+id,code,name,user_type_id:id,reconcile,chart_template_id:id
+111.01,111.01,KAS                                      ,account.data_account_type_liquidity,TRUE,l10n_id_school
+111.02,111.02,DEPOSITO                                 ,account.data_account_type_liquidity,TRUE,l10n_id_school
+111.03,111.03,BON SEMENTARA                            ,account.data_account_type_liquidity,TRUE,l10n_id_school
+111.05,111.05,KAS KECIL                                ,account.data_account_type_liquidity,TRUE,l10n_id_school
+111.06,111.06,OUT STANDING CASH                        ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.01,112.01,BANK BCA 361                             ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.05,112.05,BANK MASPION 3021003289                  ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.06,112.06,BANK BCA 3290189988                      ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.07,112.07,BANK BNI 7272727285                      ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.08,112.08,BANK MANDIRI                             ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.09,112.09,BANK MASPION PT.FEI                      ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.1,112.1,BANK NIAGA PT FEI                        ,account.data_account_type_liquidity,TRUE,l10n_id_school
+112.11,112.11,BANK BUKOPIN 100.3966.051                ,account.data_account_type_liquidity,TRUE,l10n_id_school
+113.11,113.11,PIUTANG SCHOOL FEE  IY              ,account.data_account_type_receivable,TRUE,l10n_id_school
+113.12,113.12,PIUTANG ANNUAL FEE   IY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.13,113.13,PIUTANG SUMBANGAN PEMBANGUNAN    IY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.21,113.21,PIUTANG SCHOOL FEE  PRIMARY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.22,113.22,PIUTANG ANNUAL FEE   PRIMARY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.23,113.23,PIUTANG SUMBANGAN PEMBANGUNAN   PRIMARY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.31,113.31,PIUTANG SCHOOL FEE  SECONDARY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.32,113.32,PIUTANG ANNUAL FEE   SECONDARY,account.data_account_type_receivable,TRUE,l10n_id_school
+113.33,113.33,PIUTANG SUMBANGAN PEMBANGUNAN   SECONDARY,account.data_account_type_receivable,TRUE,l10n_id_school
+114.01,114.01,PIUTANG PS (RR)                          ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.02,114.02,PIUTANG PS (HP)                          ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.03,114.03,PIUTANG LAIN-LAIN                        ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.04,114.04,"PIUTANG JAKARTA 1,5                      ",account.data_account_type_current_assets,FALSE,l10n_id_school
+114.05,114.05,PIUTANG KARYAWAN                         ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.06,114.06,PIUTANG PAK SOEBIANTO                    ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.07,114.07,PIUTANG KGB                              ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.08,114.08,PIUTANG COKRO                            ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.09,114.09,PIUTANG FBI                              ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.1,114.1,PIUTANG PAK SH 4M                        ,account.data_account_type_current_assets,FALSE,l10n_id_school
+114.11,114.11,PIUTANG BUNGA HP                         ,account.data_account_type_current_assets,FALSE,l10n_id_school
+115.01,115.01,UANG MUKA PEMBELIAN                      ,account.data_account_type_prepayments,FALSE,l10n_id_school
+115.02,115.02,UANG MUKA MANAHAN                        ,account.data_account_type_prepayments,FALSE,l10n_id_school
+115.03,115.03,UANG MUKA LAIN LAIN                      ,account.data_account_type_prepayments,FALSE,l10n_id_school
+116.01,116.01,SEWA DIBAYAR DIMUKA                      ,account.data_account_type_prepayments,FALSE,l10n_id_school
+117.01,117.01,BIAYA DIBAYAR DIMUKA RENOVASI            ,account.data_account_type_prepayments,FALSE,l10n_id_school
+117.02,117.02,ASURANSI DIBAYAR DIMUKA                  ,account.data_account_type_prepayments,FALSE,l10n_id_school
+117.03,117.03,GAJI DIBAYAR DIMUKA                      ,account.data_account_type_prepayments,FALSE,l10n_id_school
+117.04,117.04,BUNGA DIBAYAR DIMUKA                     ,account.data_account_type_prepayments,FALSE,l10n_id_school
+118.01,118.01,PERSEDIAAN SERAGAM TK                    ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.02,118.02,PERSEDIAAN SERAGAM SD                    ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.03,118.03,PERSEDIAAN LAIN-LAIN                     ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.04,118.04,PERSEDIAAN BUKU                          ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.05,118.05,PERSEDIAAN ATK                           ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.06,118.06,PERSEDIAAN KAIN                          ,account.data_account_type_current_assets,FALSE,l10n_id_school
+118.07,118.07,PERSEDIAAN AKSESORIS SERAGAM             ,account.data_account_type_current_assets,FALSE,l10n_id_school
+120.01,120.01,TANAH                                    ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.01,121.01,KENDARAAN                                ,account.data_account_type_fixed_assets,TRUE,l10n_id_school
+121.02,121.02,TOYS & LIBRARY                           ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.03,121.03,FURNITURE & EQUIP                        ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.04,121.04,ELEKTRONIK                               ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.05,121.05,AKTIVA TETAP LAINNYA                     ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.06,121.06,AKUMULASI PENYUSUTAN AKT TETAP           ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+121.07,121.07,BANGUNAN                                 ,account.data_account_type_fixed_assets,FALSE,l10n_id_school
+130.01,130.01,INITIAL FRANCHISE FEE                    ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+130.02,130.02,AKUMULASI DEPRESIASI FRANCHISE FEE       ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+130.03,130.03,ORGANIZATION COST                        ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+130.04,130.04,AKUMULASI DEPRESIASI ORGANIZATION COST   ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+140.01,140.01,BANGUNAN DLM PENGERJAAN                  ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+140.02,140.02,KS.TUBUN 29                              ,account.data_account_type_non_current_assets,FALSE,l10n_id_school
+210.01,210.01,HUTANG BU HENNY                          ,account.data_account_type_payable,TRUE,l10n_id_school
+210.02,210.02,HUTANG PAK MITRO                         ,account.data_account_type_payable,TRUE,l10n_id_school
+210.03,210.03,HUTANG DAGANG                            ,account.data_account_type_payable,TRUE,l10n_id_school
+211.01,211.01,ADVANCE SCHOOL FEE IY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+211.02,211.02,ADVANCE ANNUAL FEE IY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+211.03,211.03,ADVANCE SUMBANGAN PEMBAGUNAN IY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+212.01,212.01,ADVANCE SCHOOL FEE PRIMARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+212.02,212.02,ADVANCE ANNUAL FEE PRIMARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+212.03,212.03,ADVANCE SUMBANGAN PEMBAGUNAN PRIMARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+213.01,213.01,ADVANCE SCHOOL FEE SECONDARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+213.02,213.02,ADVANCE ANNUAL FEE SECONDARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+213.03,213.03,ADVANCE SUMBANGAN PEMBAGUNAN SECONDARY,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+214.01,214.01,BIAYA YG MSH HRS DIBAYAR                 ,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+215.01,215.01,PPN MASUKAN,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+215.02,215.02,PPN KELUARAN,account.data_account_type_current_liabilities,FALSE,l10n_id_school
+220.01,220.01,HUTANG BU YUSUF/LESTARI                  ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.02,220.02,HUTANG IIKP                              ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.03,220.03,HUTANG BP SOEBIANTO                      ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.04,220.04,HUTANG BU HENNY                          ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.05,220.05,HUTANG MASPION 1.5M                      ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.06,220.06,HUTANG PAK HADI                          ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.07,220.07,HUTANG BNI                               ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.08,220.08,HUTANG BP SOEBIANTO (FURNITURE)          ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.09,220.09,HUTANG MASPION 4M                        ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.1,220.1,HUTANG MASPION 3M                        ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.11,220.11,HUTANG COKRO                             ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.12,220.12,HUTANG KGB                               ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.13,220.13,HUTANG BU RATNA                          ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.14,220.14,HUTANG SOE ( RATNA )                     ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.15,220.15,HUTANG BANK BUKOPIN 8.5M                 ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+220.16,220.16,HUTANG BANK BUKOPIN KMK                  ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+230.01,230.01,HUTANG GIRO MUNDUR                       ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+230.02,230.02,HUTANG BANK                              ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+230.03,230.03,HUTANG ZAFIRA                            ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+230.04,230.04,HUTANG LAIN-LAIN                         ,account.data_account_type_non_current_liabilities,FALSE,l10n_id_school
+310.01,310.01,MODAL                                    ,account.data_account_type_equity,FALSE,l10n_id_school
+320.01,320.01,LABA DITAHAN                             ,account.data_account_type_equity,FALSE,l10n_id_school
+330.01,330.01,LABA TAHUN BERJALAN                      ,account.data_unaffected_earnings,FALSE,l10n_id_school
+410.01,410.01,PENDAPATAN SCHOOL FEE   IY    ,account.data_account_type_revenue,FALSE,l10n_id_school
+410.02,410.02,PENDAPATAN ANNUAL FEE IY,account.data_account_type_revenue,FALSE,l10n_id_school
+410.03,410.03,PENDAPATAN SUMANGAN PEMBAGUNAN IY,account.data_account_type_revenue,FALSE,l10n_id_school
+420.01,420.01,PENDAPATAN SCHOOL FEE   PRIMARY,account.data_account_type_revenue,FALSE,l10n_id_school
+420.02,420.02,PENDAPATAN ANNUAL FEE PRIMARY,account.data_account_type_revenue,FALSE,l10n_id_school
+420.03,420.03,PENDAPATAN SUMANGAN PEMBAGUNAN PRIMARY,account.data_account_type_revenue,FALSE,l10n_id_school
+430.01,430.01,PENDAPATAN SCHOOL FEE   SECONDARY,account.data_account_type_revenue,FALSE,l10n_id_school
+430.02,430.02,PENDAPATAN ANNUAL FEE SECONDARY,account.data_account_type_revenue,FALSE,l10n_id_school
+430.03,430.03,PENDAPATAN SUMANGAN PEMBAGUNAN SECONDARY,account.data_account_type_revenue,FALSE,l10n_id_school
+510.01,510.01,BIAYA GAJI IY,account.data_account_type_direct_costs,FALSE,l10n_id_school
+510.02,510.02,BIAYA MAKAN & MINUM - IY             ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+510.03,510.03,BIAYA KEGIATAN SEKOLAH IY      ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+511.01,511.01,BIAYA GAJI PRIMARY,account.data_account_type_direct_costs,FALSE,l10n_id_school
+511.02,511.02,BIAYA MAKAN & MINUM - PRIMARY                ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+511.03,511.03,BIAYA KEGIATAN SEKOLAH PRIMARY     ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+512.01,512.01,BIAYA GAJI SECONDARY,account.data_account_type_direct_costs,FALSE,l10n_id_school
+512.02,512.02,BIAYA MAKAN & MINUM SECONDARY                   ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+512.03,512.03,BIAYA KEGIATAN SEKOLAH SECONDARY       ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+440.01,440.01,PENJUALAN SERAGAM IY           ,account.data_account_type_revenue,FALSE,l10n_id_school
+440.02,440.02,PENJUALAN SERAGAM PRIMARY          ,account.data_account_type_revenue,FALSE,l10n_id_school
+440.03,440.03,PENJUALAN SERAGAM SECONDARY,account.data_account_type_revenue,FALSE,l10n_id_school
+440.04,440.04,PENJUALAN LAINNYA                        ,account.data_account_type_revenue,FALSE,l10n_id_school
+440.05,440.05,PENJUALAN BUKU                           ,account.data_account_type_revenue,FALSE,l10n_id_school
+440.06,440.06,PENJUALAN ACCESORIS                      ,account.data_account_type_revenue,FALSE,l10n_id_school
+540.01,540.01,HPP PENJUALAN SERAGAM IY      ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+540.02,540.02,HPP PENJUALAN SERAGAM PRIMARY       ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+540.03,540.03,HPP PENJUALAN SERAGAM SECONDARY    ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+540.04,540.04,HPP PENJUALAN LAINNYA                    ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+540.05,540.05,HPP PENJUALAN BUKU                       ,account.data_account_type_direct_costs,FALSE,l10n_id_school
+540.06,540.06,HPP PENJUALAN ACCESORIS,account.data_account_type_direct_costs,FALSE,l10n_id_school
+520.01,520.01,BIAYA GAJI AMINISTRASI,account.data_account_type_expenses,FALSE,l10n_id_school
+520.02,520.02,BIAYA BUKU                               ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.03,520.03,BIAYA ASKES                              ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.04,520.04,BIAYA JAMSOSTEK                          ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.05,520.05,BIAYA LISTRIK                            ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.06,520.06,BIAYA TELEPON                            ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.07,520.07,BIAYA INDOVISION                         ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.08,520.08,BIAYA TRANSPORTASI                       ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.09,520.09,BIAYA INTERNET                     ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.1,520.1,BIAYA KONSULTAN                          ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.11,520.11,BIAYA ASURANSI                           ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.12,520.12,BIAYA MARKETING                          ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.13,520.13,BIAYA IURAN PENDIDIKAN                   ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.14,520.14,BIAYA ADMINISTRASI SEKOLAH               ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.15,520.15,BIAYA PAJAK DLL                          ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.16,520.16,BIAYA SERVICE & PEMELIHARAAN             ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.17,520.17,BIAYA TRANSPORTASI                       ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.18,520.18,BIAYA SEWA                       ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.19,520.19,BIAYA SUMBANGAN & PERIJINAN              ,account.data_account_type_expenses,FALSE,l10n_id_school
+520.2,520.2,BIAYA TRAINING                           ,account.data_account_type_expenses,FALSE,l10n_id_school
+610.01,610.01,PENDAPATAN BUNGA                         ,account.data_account_type_other_income,FALSE,l10n_id_school
+610.02,610.02,PENDAPATAN JASA GIRO                     ,account.data_account_type_other_income,FALSE,l10n_id_school
+610.03,610.03,PENDAPATAN BUNGA BANK                    ,account.data_account_type_other_income,FALSE,l10n_id_school
+610.04,610.04,PENDAPATAN DENDA                         ,account.data_account_type_other_income,FALSE,l10n_id_school
+610.05,610.05,PENDAPATAN LAIN-LAIN                     ,account.data_account_type_other_income,FALSE,l10n_id_school
+710.01,710.01,BIAYA BUNGA BANK                         ,account.data_account_type_expenses,FALSE,l10n_id_school
+710.02,710.02,BIAYA BUNGA PIHAK III                    ,account.data_account_type_expenses,FALSE,l10n_id_school
+710.03,710.03,BIAYA PROVISI                            ,account.data_account_type_expenses,FALSE,l10n_id_school
+730.01,730.01,DEPRESIASI TOYS                          ,account.data_account_type_depreciation,FALSE,l10n_id_school
+730.02,730.02,DEPRESIASI FURNITURE & EQUIP             ,account.data_account_type_depreciation,FALSE,l10n_id_school
+730.03,730.03,DEPRESIASI ELEKTRONIK                    ,account.data_account_type_depreciation,FALSE,l10n_id_school
+730.09,730.09,DEPRESIASI KENDARAAN                     ,account.data_account_type_depreciation,FALSE,l10n_id_school
+730.1,730.1,DEPRESIASI BANGUNAN                      ,account.data_account_type_depreciation,FALSE,l10n_id_school

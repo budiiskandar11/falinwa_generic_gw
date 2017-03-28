@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	
+	
+	<record id='settlement_form_view' model='ir.ui.view'>
+            <field name="name">Settlement View Form</field>
+            <field name="model">cash.settlement</field>
+            <field name="arch" type="xml">
+            	<form string="Settlements">
+            		<header>
+            			<button name="action_move_line_create" type="object" string="Validate" class="oe_highlight"/>
+            		</header>
+            		<sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="settlement No"/>
+                        </h1>
+                    </div>
+                    <group>
+                    	<group>
+                    		<field name="date_submitted"/>
+                    		<field name="responsible_id"/>
+                    		
+                    		
+                    		<field name="company_id" invisible="1"/>
+                    	</group>
+                    	<group>
+                    		<field name="advance_id" readonly="1"/>
+                    		<field name="partner_id" readonly="1"/>
+                    		<field name="advance_date" readonly="1"/>
+                    		<!-- <field name="advance_amount" readonly="1"/> -->
+                    		<field name="currency_id" readonly="1"/>
+                    		
+                    	</group>
+                    </group>
+                    <notebook>
+                    	<page string="Lines">
+                    		
+                    			<field name="line_ids" nolabel="1">
+                    				<tree string="Settlement Lines" editable="bottom">
+                    					<field name="date"/>
+                    					<field name="expense_type" widget="selection"/>
+                    					<field name="name"/>
+                    					<field name="quantity"/>
+                    					<field name="uom_id"/>
+                    					<field name="price_unit"/>
+                    					<field name="settlement_line_tax_ids" context="{'type':parent.get('type')}" domain="[('type_tax_use','!=','none'),('company_id', '=', parent.company_id)]" widget="many2many_tags" options="{'no_create': True}"/>
+                    					<field name="price_subtotal"/>
+                    				</tree>
+                    			</field>
+                    		
+                    		<group>
+                    			<group class="oe_subtotal_footer oe_right">
+                                    <field name="untaxed_amount"/>
+                                    <field name="taxed_amount"/>
+                                    <field name="total_amount" class="oe_subtotal_footer_separator"/>
+                                    <field name="advance_amount" readonly="1"/>
+                                    <field name="diff_amount" class="oe_subtotal_footer_separator"/>
+                                </group> 
+                    		</group>
+                    		<group>
+                    			<field name="voucher_id"/>
+                    			
+                    		</group>
+                    	</page>
+                    	<page string="Other Info">
+                    		<group>
+                    			<group>
+                    				<field name="journal_id"/>
+                    			</group>
+                    		</group>
+                    	
+                    	</page>
+                    </notebook>
+                    </sheet>
+            	</form>
+            </field>
+    </record>
+    <record id='settlement_tree_view' model='ir.ui.view'>
+            <field name="name">Settlement View Form</field>
+            <field name="model">cash.settlement</field>
+            <field name="arch" type="xml">
+            	<tree string="Settlements">
+                	<field name="name" placeholder="settlement No"/>
+                            <field name="date_submitted"/>
+                    		<field name="partner_id"/>
+                    		<field name="currency_id"/>
+                    		<field name="advance_id"/>
+                    		<field name="advance_date"/>
+                    		<field name="advance_amount"/>
+                </tree>
+            </field>
+    </record>
+    
+    <record id='settlement_action' model='ir.actions.act_window'>
+            <field name="name">Settlements</field>
+            <field name="res_model">cash.settlement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create a new vehicle.
+              </p><p>
+                You will be able to manage your fleet by keeping track of the
+                contracts, services, fixed and recurring costs, odometers and
+                fuel logs associated to each vehicle.
+            </p><p>
+                Odoo will warn you when services or contract have to be
+                renewed.
+              </p>
+            </field>
+        </record>
+        
+        <menuitem name="Settlement" parent="dos_cash_advance.menu_root" id="settlement_advance" sequence="2"/>
+        <menuitem action="settlement_action" parent="settlement_advance" id="settlement_menu"/>
+    
+
+
+</odoo>

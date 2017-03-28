@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    
+        <record model="ir.ui.view" id="view_account_asset_category_form_ttext">
+            <field name="name">account.asset.category.form.ttext</field>
+            <field name="model">account.asset.category</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_category_form" />
+            <field name="arch" type="xml">
+                <field name="type" position="after">
+                    <field name="fal_type" />
+                    <field name="parent_id" />
+                </field>
+                <field name="account_analytic_id" position="before">
+                    <!-- <field name="account_income_recognition_id" /> -->
+                    <field name="fal_asset_account_id" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_account_asset_asset_purchase_tree_falsbext">
+            <field name="name">account.asset.asset.purchase.tree.falsbext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_purchase_tree" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="fal_asset_number"/>
+                </field>                
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="view_account_asset_asset_form_ttext">
+            <field name="name">account.asset.asset.form.ttext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_asset_form" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="fal_asset_number" class="oe_inline" readonly="1"/> - 
+                </field>
+                <field name="value" position="after">
+                    <field name="fal_original_purchase_value" widget="monetary" options="{'currency_field': 'currency_id'}" help="Original Purchase value of asset" />
+                    <field name="fal_annual_depreciation" attrs="{'invisible':[('method_time','!=','percentage purchase value')]}" />
+                </field>
+                <field name="date" position="after">
+                    <field name="fal_second_depreciation_date" attrs="{'invisible': [('prorata', '=', False)], 'required': [('prorata', '=', True)]}" />
+                    <field name="fal_purchase_date" />
+                </field>
+                <field name="method_number" position="attributes">
+                    <attribute name="attrs">{'required': [('method_time','=','number')], 'invisible':[('method_time','!=','number')]}</attribute>
+                </field>
+                <field name="method_end" position="attributes">
+                    <attribute name="attrs">{'required': [('method_time','=','end')], 'invisible':[('method_time','!=','end')]}</attribute>
+                </field>
+                <field name="method_end" position="after">
+                    <field name="fal_annual_percentage" attrs="{'required': [('method_time','=','percentage purchase value')], 'invisible':[('method_time','!=','percentage purchase value')]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_account_asset_search_ttext" model="ir.ui.view">
+            <field name="name">account.asset.asset.search.ttext</field>
+            <field name="model">account.asset.asset</field>
+            <field name="inherit_id" ref="account_asset.view_account_asset_search" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="fal_asset_number" />
+                    <field name="invoice_id" />
+                </field>            
+            </field>
+        </record>
+        
+        <record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice.supplier.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[1]" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="open_fal_asset" type="object" icon="fa-pencil">
+                            <field string="Assets" name="fal_asset_count" widget="statinfo" />
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <act_window name="Multi Confirm Asset"
+            res_model="fal.multi.confirm.asset.wizard"
+            src_model="account.asset.asset"
+            view_mode="form"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            id="action_fal_multi_confirm_asset_wizard"/>
+            
+    </data>
+</odoo>

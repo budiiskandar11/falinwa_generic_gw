@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="crm_case_form_view_leads" model="ir.ui.view">
+    <field name="name">CRM - Leads with timesheets</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+    <field name="arch" type="xml">
+        <field name="user_id" position="after">
+            <field name="analytic_account_id" />
+        </field>
+        <notebook position="inside">
+            <page string="Timesheet">
+                <field name="timesheet_ids"
+                    context="{'default_account_id': analytic_account_id,
+                              'default_user_id': uid}">
+                    <tree editable="bottom">
+                        <field name="date"/>
+                        <field name="user_id" required="1" options='{"no_open": True}'
+                            context="{'default_groups_ref': ['base.group_user']}"/>
+                        <field name="name"/>
+                        <field name="account_id" context="{'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="unit_amount" string="Duration" sum="Total time" widget="float_time"/>
+                        <field name="is_timesheet" invisible="1"/>
+                    </tree>
+                </field>
+            </page>
+        </notebook>
+    </field>
+</record>
+
+<record id="crm_case_form_view_oppor" model="ir.ui.view">
+    <field name="name">CRM - Opportunities with timesheets</field>
+    <field name="model">crm.lead</field>
+    <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+    <field name="arch" type="xml">
+        <field name="user_id" position="after">
+            <field name="analytic_account_id" />
+        </field>
+        <notebook position="inside">
+            <page string="Timesheet">
+                <field name="timesheet_ids"
+                    context="{'default_account_id': analytic_account_id,
+                              'default_user_id': uid}">
+                    <tree editable="bottom">
+                        <field name="date"/>
+                        <field name="user_id" required="1" options='{"no_open": True}'
+                            context="{'default_groups_ref': ['base.group_user']}"/>
+                        <field name="name"/>
+                        <field name="account_id" context="{'default_type': 'contract'}" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="unit_amount" string="Duration" sum="Total time" widget="float_time"/>
+                        <field name="is_timesheet" invisible="1"/>
+                    </tree>
+                </field>
+            </page>
+        </notebook>
+    </field>
+</record>
+</data>
+</openerp>

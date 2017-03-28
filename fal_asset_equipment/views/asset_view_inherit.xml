@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- equiment : views -->
+    <record id="asset_inherit_view_form" model="ir.ui.view">
+        <field name="name">asset.inherit.form</field>
+        <field name="model">account.asset.asset</field>
+        <field name="inherit_id" ref="account_asset.view_account_asset_asset_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/div[2]" position="after">
+                <label for="asset_id" class="oe_edit_only"/>
+                <div class="oe_title">
+                <h2><field name="number"/></h2>
+            </div>
+            </xpath>
+           
+        </field>
+    </record>
+
+
+</odoo>

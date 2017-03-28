@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="crm_case_form_view_leads_falcrmpro">
+            <field name="name">CRM - Leads Form falcrmpro</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/field[@name='description']" position="after">
+                    <field name="fal_lead_expertise_tag_line_ids" nolabel="1" attrs="{'invisible': [('id', '=', False)]}">
+                        <tree editable="bottom">
+                            <field name="expertise_skill_tag_id" string="Expertise Skill"/>
+                            <field name="fal_offer_category_tags_ids" widget="many2many_tags" string="Offer Category" domain="['&amp;', '|', ('expertise_skill_tag_ids', 'in', expertise_skill_tag_id), ('expertise_skill_tag_ids', '=', False), '&amp;', ('parent_id', '!=', False), ('child_ids', '=', False)]"/>
+                            <field name="company_id" />
+                            <field name="responsible_id" />
+                            <field name="project_template_id" />
+                        </tree>
+                    </field>
+                </xpath>
+
+                <!-- Start Qualification Button -->
+                <button name="%(crm.action_crm_lead2opportunity_partner)d" position="before">
+                    <button name="action_start_qualification" type="object" string="Start Qualification" class="oe_highlight" attrs="{'invisible': [('probability', '&gt;', 10)]}" groups="base.group_sale_manager,base.group_sale_salesman"/>
+                </button>
+
+                <!-- Rename Two Buttons -->
+                <button name="%(crm.action_crm_lead2opportunity_partner)d" position="replace">
+                    <button name="%(crm.action_crm_lead2opportunity_partner)d" string="Convert to Customer Project" type="action" help="Convert to Customer Project" class="oe_highlight" attrs="{'invisible': [('probability', '=', 10)]}" groups="base.group_sale_manager,base.group_sale_salesman_all_leads"/>
+                </button>
+                <button name="action_set_lost" position="replace">
+                    <button name="action_set_lost" string="Close" type="object" class="oe_highlight" attrs="{'invisible': ['|',('active', '=', False),('probability', '=', 10)]}" groups="base.group_sale_manager,base.group_sale_salesman_all_leads"/>
+                </button>
+
+                <!-- Create a Customer and Close button -->
+                <button name="action_set_lost" position="before">
+                    <button name="action_create_partner_and_lost" string="Create a Customer and Close" type="object" class="oe_highlight" attrs="{'invisible': ['|',('active', '=', False),('probability', '=', 10)]}" groups="base.group_sale_manager,base.group_sale_salesman_all_leads"/>
+                </button>
+
+                <!-- Additional Fields -->
+                <field name="email_from" position="before">
+                    <field name="fal_admin_contact" domain="[('parent_id', '=', partner_id),('parent_id', '!=', False)]" attrs="{'invisible': [('fal_is_customer_have_contact', '=', False)]}"/>
+                    <label for="fal_technical_contact" />
+                    <div>
+                        <field name="fal_technical_contact" domain="[('parent_id', '=', partner_id),('parent_id', '!=', False)]" attrs="{'invisible': [('fal_is_customer_have_contact', '=', False)]}"/>
+                        <field name="fal_new_technical_contact" attrs="{'invisible': [('fal_is_customer_have_contact', '!=', False)]}"/>
+                    </div>
+                    <field name="fal_is_customer_have_contact" attrs="{'invisible': True}"/>
+                    <field name="id" invisible="1"/>
+                </field>
+
+                <!-- Hide Contac Name Field -->
+                <label for="contact_name" position="attributes">
+                    <attribute name="attrs">{'invisible': [('fal_is_customer_have_contact', '!=', False)]}</attribute>
+                </label>
+                <field name="contact_name" position="attributes">
+                    <attribute name="attrs">{'invisible': [('fal_is_customer_have_contact', '!=', False)]}</attribute>
+                </field>
+                <field name="title" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <field name="referred" position="before">
+                    <field name="fal_referred_partner" domain="[('fal_is_agent', '=', True)]"/>
+                </field>
+
+                <field name="referred" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <!-- <field name="team_id" position="after">
+                    <field name="fal_responsible_id"/>
+                </field> -->
+
+                <field name="team_id" position="before">
+                    <field name="fal_lead_sales_person_id"/>
+                </field>
+                <field name="user_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="stage_id" position="replace">
+                    <field name="stage_id" widget="statusbar"
+                        domain="['&amp;', ('team_ids', '=', team_id), '|', ('type', '=', type), ('type', '=', 'both')]"
+                        options="{'fold_field': 'fold'}"
+                        on_change="onchange_stage_id(stage_id)"/>
+                </field>
+                <field name="email_from" position="attributes">
+                    <attribute name="attrs">{'readonly': [('partner_id','!=',False)]}</attribute>
+                </field>
+                <field name="function" position="attributes">
+                    <attribute name="attrs">{'readonly': [('partner_id','!=',False)]}</attribute>
+                </field>
+                <field name="phone" position="attributes">
+                    <attribute name="attrs">{'readonly': [('partner_id','!=',False)]}</attribute>
+                </field>
+                <field name="mobile" position="attributes">
+                    <attribute name="attrs">{'readonly': [('partner_id','!=',False)]}</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_case_form_view_oppor_falcrmpro">
+            <field name="name">Opportunities falcrmpro</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <field name="phone" position="after">
+                    <field name="fal_admin_contact" domain="[('parent_id', '=', partner_id), ('parent_id', '!=', False)]"/>
+                    <field name="fal_technical_contact" domain="[('parent_id', '=', partner_id), ('parent_id', '!=', False)]"/>
+                </field>
+
+                <!-- Hide Contac Name Field -->
+                <label for="contact_name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </label>
+                <field name="contact_name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="title" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <!-- div class="o_row" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </div -->
+                <xpath expr="//field[@name='last_activity_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//label[@for='next_activity_id']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//group/group[2]/div" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <field name="team_id" position="after">
+                    <field name="fal_referred_partner" domain="[('fal_is_agent', '=', True)]" invisible="1"/>
+                    <field name="fal_code" invisible="1"/>
+                </field>
+
+                <field name="referred" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+                <!-- <field name="team_id" position="after">
+                    <field name="fal_responsible_id" attrs="{'required': [('type', '=', 'opportunity')]}"/>
+                </field> -->
+
+                <field name="team_id" position="before">
+                    <field name="fal_lead_sales_person_id" />
+                </field>
+
+                <field name="user_id" position="attributes">
+                    <attribute name="attrs">{'required': [('type', '=', 'opportunity')]}</attribute>
+                </field>
+
+                <xpath expr="//notebook/page[1]" position="after">
+                    <page string="Activity Follow-up">
+                        <field name="fal_activity_follow_up_ids">
+                            <tree string="Activity Follow Up" editable="bottom">
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="activity_id"/>
+                                <field name="user_id"/>
+                                <field name="account_analytic_id" invisible="1"/>
+                                <field name="duration"/>
+                                <field name="expected_date"/>
+                                <field name="realized_date"/>
+                                <field name="state" readonly="1"/>
+                                <button name="set_done" type="object" string="Done" icon="STOCK_APPLY"/>
+                                <button name="set_not_done" type="object" string="Cancel" icon="STOCK_CANCEL"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Team" name="fal_team">
+                        <field name="fal_crm_project_team_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="type" invisible="1"/>
+                                <field name="type_id" />
+                                <field name="type_id_is_cam" invisible="1"/>
+                                <field name="partner_ids" widget="many2many_tags" attrs="{'invisible':[('type_id_is_cam','!=',True)]}"/>
+                                <field name="comment" />
+                                <field name="price" />
+                                <field name="uom_id" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+
+                <xpath expr="//notebook/page/field[@name='description']" position="after">
+                    <field name="fal_lead_expertise_tag_line_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="expertise_skill_tag_id" string="Expertise Skill"/>
+                            <field name="fal_offer_category_tags_ids" widget="many2many_tags" string="Offer Category" domain="['&amp;', '|', ('expertise_skill_tag_ids', 'in', expertise_skill_tag_id), ('expertise_skill_tag_ids', '=', False), '&amp;', ('parent_id', '!=', False), ('child_ids', '=', False)]"/>
+                            <field name="company_id" />
+                            <field name="responsible_id" />
+                            <field name="project_template_id" invisible="1"/>
+                        </tree>
+                    </field>
+                </xpath>
+
+                <xpath expr="//div[@name='button_box']/button[@name='action_schedule_meeting']" position="before">
+                    <button string="Offre" type="object" name="action_goto_offre" class="oe_stat_button" icon="fa-calendar"/>
+                </xpath>
+                <xpath expr="//label[@for='probability']" position="attributes">
+                    <attribute name="class"></attribute>
+                </xpath>
+                <xpath expr="//label[@for='planned_revenue']" position="attributes">
+                    <attribute name="class"></attribute>
+                </xpath>
+                <xpath expr="//h2[@class='o_row'][1]/div/div[@class='o_row']/span[@class='oe_grey']" position="replace">
+                </xpath>
+                <xpath expr="//field[@name='planned_revenue']/.." position="attributes">
+                    <attribute name="class"></attribute>
+                </xpath>
+                <xpath expr="//field[@name='probability']/.." position="before">
+                    <br/>
+                </xpath>
+
+                <xpath expr="//label[@for='planned_revenue']/.." position="after">
+                    <div>
+                        <label for="fal_gross_margin"/>
+                        <div>
+                            <field name="fal_gross_margin" widget='monetary'/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="fal_net_margin"/>
+                        <div>
+                            <field name="fal_net_margin" widget='monetary'/>
+                            <span class="oe_grey"> at </span>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!-- <xpath expr="//h2[@class='o_row'][1]" position="replace">
+                    <h2 name="fal_expectation" class="o_row">
+                        <div>
+                            <label for="planned_revenue" />
+                            <div>
+                                <field name="company_currency" invisible="1"/>
+                                <field name="planned_revenue" widget='monetary' options="{'currency_field': 'company_currency'}"/>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="fal_gross_margin"/>
+                            <div>
+                                <field name="fal_gross_margin" widget='monetary'/>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="fal_net_margin"/>
+                            <div>
+                                <field name="fal_net_margin" widget='monetary'/>
+                                <span class="oe_grey"> at </span>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="probability"/>
+                            <div>
+                                <field name="probability" widget="integer"/>
+                                <span>%%</span>
+                            </div>
+                        </div>
+                    </h2>
+                </xpath> -->
+
+                <!-- Button for Transition -->
+                <button name="action_set_won" position="before">
+                    <!-- Forward states flow -->
+                    <!-- New to Technical Meeting -->
+                    <button name="action_prepare_technical_meeting" type="object" string="Prepare Technical Meeting" class="oe_highlight" attrs="{'invisible': [('fal_code', 'in', ['fal_cancelled','fal_technical_meeting','fal_to_quote','fal_offer_sent','fal_offer_made','fal_customer_agreement'])]}"/>
+                    <!-- Technical Meeting to To quote -->
+                    <button name="action_make_appointment" type="object" string="Make Appointment" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_technical_meeting')]}"/>
+                    <!-- To quote to Offer Sent -->
+                    <button name="action_send_offer" type="object" string="Send Offer" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_to_quote')]}"/>
+                    <!-- Offer Sent to Offer Made -->
+                    <button name="action_make_offer" type="object" string="Make Offer" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_offer_sent')]}"/>
+                    <!-- Offer Made ro Customer Agreement -->
+                    <button name="action_get_customer_agreement" type="object" string="Get Customer Agreement" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_offer_made')]}"/>
+
+                    <!-- Backward states flow -->
+                    <!-- To Quote to Technical Meeting -->
+                    <button name="action_prepare_technical_meeting" type="object" string="Back to Technical Meeting To Do" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_to_quote')]}"/>
+                    <!-- Offer Sent to To Quote -->
+                    <button name="action_make_appointment" type="object" string="Back to To Quote" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_offer_sent')]}"/>
+                    <!-- Offer Made to Offer Sent -->
+                    <button name="action_send_offer" type="object" string="Back to Offer Sent" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_offer_made')]}"/>
+                     <!-- Offer Sent to Offer Made -->
+                    <button name="action_make_offer" type="object" string="Back to Offer Made" class="oe_highlight" attrs="{'invisible': [('fal_code', '!=', 'fal_customer_agreement')]}"/>
+
+                    <!-- Other Button -->
+                    <!-- Cancel Opportunity -->
+                    <button name="action_cancelled_opportunity" type="object" string="Cancel" class="oe_highlight" invisible="1"/>
+                </button>
+
+                <field name="stage_id" position="replace">
+                    <field name="stage_id" widget="statusbar"
+                        domain="['&amp;', ('team_ids', '=', team_id), '|', ('type', '=', type), ('type', '=', 'both')]"
+                        options="{'fold_field': 'fold'}"
+                        on_change="onchange_stage_id(stage_id)"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_expertise_skill_tags_form">
+            <field name="name">Expertise Skill Tags Form</field>
+            <field name="model">fal.expertise.skill.tag</field>
+            <field name="arch" type="xml">
+               <form string="Expertise Skill Tag">
+                    <group col="4">
+                        <field name="parent_id" />
+                        <field name="name" />
+                        <field name="company_id" />
+                        <field name="responsible_id" />
+                        <field name="project_template_id" />
+                        <field name="sustainable_building" />
+                        <field name="sequence" />
+                        <field name="fal_offer_category_tags_ids" widget="many2many_tags" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_expertise_skill_tags_tree">
+            <field name="name">Expertise Skill Tags Tree</field>
+            <field name="model">fal.expertise.skill.tag</field>
+            <field name="arch" type="xml">
+               <tree string="Expertise Skill Tag">
+                    <field name="name" />
+                    <field name="company_id" />
+                    <field name="responsible_id" />
+                    <field name="project_template_id" />
+                    <field name="sequence" widget="handle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_offer_category_tag_form">
+            <field name="name">Offer Category Tag Form</field>
+            <field name="model">fal.offer.category.tag</field>
+            <field name="arch" type="xml">
+               <form string="Offer Category Tag">
+                    <group col="4">
+                        <field name="name" />
+                        <field name="parent_id" />
+                        <field name="expertise_skill_tag_ids" widget="many2many_tags"/>
+                        <field name="sequence"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_users_form_falcrmpro" model="ir.ui.view">
+            <field name="name">res.users.form.falcrmpro</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="fal_analytic_account_id" />
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_activity_follow_up_tree_view_crm_project">
+            <field name="name">fal.activity.follow.up.tree.view.crm.project</field>
+            <field name="model">fal.activity.follow.up</field>
+            <field name="inherit_id" ref="fal_activity_follow_up.fal_activity_follow_up_tree_view" />
+            <field name="arch" type="xml">
+                <field name="lead_id" position="after">
+                    <field name="is_lead_won_lost_canceled" invisible="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="fal_activity_follow_up_search_view_crm_project" model="ir.ui.view">
+            <field name="name">Activity Followup Search View CRM Project</field>
+            <field name="model">fal.activity.follow.up</field>
+            <field name="inherit_id" ref="fal_activity_follow_up.fal_activity_follow_up_search_view" />
+            <field name="arch" type="xml">
+                <filter name="overdue" position="after">
+                    <separator/>
+                    <filter string="Customer Project Not Canceled, Not Lost, Not Won" name="customer_project_not_canceled_lost_won" domain="[('is_lead_won_lost_canceled', '!=', True)]"/>
+                </filter>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_offer_category_tag_tree">
+            <field name="name">Offer Category Tag Tree</field>
+            <field name="model">fal.offer.category.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Offer Category Tag">
+                    <field name="name" />
+                    <field name="parent_id" />
+                    <field name="sequence" widget="handle"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fal_crm_project_team_type_form">
+            <field name="name">Project Team Type Form</field>
+            <field name="model">fal.crm.project.team.type</field>
+            <field name="arch" type="xml">
+                <form string="Project Team Type">
+                    <group>
+                        <field name="name" />
+                        <field name="is_cam" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fal_expertise_skill_tags_action">
+            <field name="name">Expertise Skill Tags</field>
+            <field name="res_model">fal.expertise.skill.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+    Define Expertise Skill Tag in here.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="fal_expertise_skill_tag_setting" name="Expertise Skill Tags" parent="base.menu_sale_config"
+            sequence="99" action="fal_expertise_skill_tags_action"/>
+
+
+        <record model="ir.actions.act_window" id="action_project_chiffrage_tree_view">
+            <field name="name">Project Chiffrage</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">tree,kanban,graph,pivot,form,calendar</field>
+            <field name="domain">[('fal_is_chiffrage','=',1)]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p>
+                    This is Project Chiffrage.
+                </p>
+            </field>
+        </record>
+
+        <!--
+        <menuitem id="menu_project_chifrage" action="action_project_chiffrage_tree_view" parent="base.menu_sales" sequence="4"/>
+        -->
+
+        <!-- <delete model="ir.ui.menu" id="crm.crm_lead_menu_activities"/> -->
+
+        <record model="ir.actions.act_window" id="fal_offer_category_tags_action">
+            <field name="name">Offer Category Tags</field>
+            <field name="res_model">fal.offer.category.tag</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+    Define Offer Category tag in here.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fal_crm_project_team_type_action">
+            <field name="name">Project Team Type</field>
+            <field name="res_model">fal.crm.project.team.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p>
+    Define Project Team type in here.
+                </p>
+            </field>
+        </record>
+
+        <record id="cancel_opportunity" model="ir.actions.server">
+            <field name="name">Cancel This Opportunity</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="state">code</field>
+            <field name="code">
+                self.action_cancel(cr, uid, context.get('active_ids', []), context=context)
+            </field>
+        </record>
+
+        <record id="action_cancel_opportunity" model="ir.values">
+            <field name="name">action_cancel_opportunity</field>
+            <field name="action_id" ref="fal_crm_project.cancel_opportunity" />
+            <field name="value" eval="'ir.actions.server,' + str(ref('cancel_opportunity'))" />
+            <field name="key">action</field>
+            <field name="model_id" ref="model_crm_lead"/>
+            <field name="model">crm.lead</field>
+            <field name="key2">client_action_relate</field>
+        </record>
+
+        <menuitem id="fal_offer_category_tag_setting" name="Offer Category Tags" parent="base.menu_sale_config"
+            sequence="99" action="fal_offer_category_tags_action"/>
+        <menuitem id="fal_project_team_type_menu" name="Project Team Type" parent="base.menu_sale_config"
+            sequence="99" action="fal_crm_project_team_type_action"/>
+    </data>
+</openerp>

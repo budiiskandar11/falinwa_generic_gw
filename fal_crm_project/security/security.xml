@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="crm.crm_rule_personal_lead" model="ir.rule">
+            <field name="name">Personal Leads</field>
+            <field ref="crm.model_crm_lead" name="model_id"/>
+            <field name="domain_force">['|', ('fal_lead_sales_person_id','=',user.id), ('user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+        </record>
+
+        <record id="crm.crm_rule_personal_lead_report" model="ir.rule">
+            <field name="name">Personal Leads Analysis</field>
+            <field ref="crm.model_crm_opportunity_report" name="model_id"/>
+            <field name="domain_force">['|', ('fal_lead_sales_person_id','=',user.id), ('user_id','=',user.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_sale_salesman'))]"/>
+        </record>
+    
+    </data>
+</openerp>
+

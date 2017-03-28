@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    
+    <record id="view_partner_tree_inherit" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+            	<field name="display_name" position="before">
+            		<field name="ref"/>
+            	</field>
+            </field>
+    </record>
+    
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="/form/sheet/notebook/page[3]/group/group[3]/field[@name='ref']" position="replace">
+            		<field name="is_employee"/>
+            	</xpath>
+            	<xpath expr="//field[@name='parent_id']" position="before">
+            		<div class="o_row">
+            			<field name="ref" placeholder="partner number"/>
+            			
+            		</div>
+            	</xpath>
+            	<xpath expr="//field[@name='category_id']" position="after">
+            	
+            			<field name="npwp" placeholder="NPWP"/>
+                        <field name="group_id" placeholder="Group" domain="[('is_holding','=',True)]"/>
+                        <!-- <field name="birthday" placeholder="Ulang Tahun"/> -->
+            		  <field name="supplier_ref" string="Supplier Refference"/>
+            	</xpath>
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <label for="is_holding" string="Holding" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                    <field name="is_holding" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                </xpath>
+            </field>
+    </record>
+
+
+    
+    </data>
+</odoo>

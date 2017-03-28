@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="crm.stage" id="fal_stage_in_qualification">
+            <field name="name">In Qualification</field>
+            <field name="probability">0</field>
+            <field name="on_change">1</field>
+            <field name="sequence">4</field>
+            <field name="type">lead</field>
+            <field name="fal_code">fal_stage_in_qualification</field>
+        </record>
+        <record model="crm.stage" id="fal_technical_meeting">
+            <field name="name">Technical meeting To Do</field>
+            <field name="probability">0</field>
+            <field name="on_change">1</field>
+            <field name="sequence">3</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_technical_meeting</field>
+        </record>
+        <record model="crm.stage" id="fal_to_quote">
+            <field name="name">To Quote</field>
+            <field name="probability">20</field>
+            <field name="on_change">1</field>
+            <field name="sequence">5</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_to_quote</field>
+        </record>
+        <record model="crm.stage" id="fal_offer_sent">
+            <field name="name">Offer Sent</field>
+            <field name="probability">40</field>
+            <field name="on_change">1</field>
+            <field name="sequence">6</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_offer_sent</field>
+        </record>
+        <record model="crm.stage" id="fal_offer_made">
+            <field name="name">Offer Made</field>
+            <field name="probability">60</field>
+            <field name="on_change">1</field>
+            <field name="sequence">7</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_offer_made</field>
+        </record>
+        <record model="crm.stage" id="fal_customer_agreement">
+            <field name="name">Customer Agreement</field>
+            <field name="probability">80</field>
+            <field name="on_change">1</field>
+            <field name="sequence">8</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_customer_agreement</field>
+        </record>
+        <record model="crm.stage" id="fal_cancelled">
+            <field name="name">Cancelled</field>
+            <field name="probability">0</field>
+            <field name="on_change">1</field>
+            <field name="sequence">10</field>
+            <field name="type">opportunity</field>
+            <field name="fal_code">fal_cancelled</field>
+        </record>
+    </data>
+</odoo>

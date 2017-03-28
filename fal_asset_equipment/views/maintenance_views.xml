@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- equiment : views -->
+    <record id="maintenance_equipment_view_form_inherit_asset" model="ir.ui.view">
+        <field name="name">maintenance.equipment.view.form.inherit.asset</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="before">
+                <field name="asset_id"/>
+            </xpath>
+            <xpath expr='//page[2]' position="after">
+                <page string="Manual Book">
+
+                    <field name="manual_book" widget="pdf_viewer" nolabel="1"/>
+                
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="maintenance_equipment_view_tree_inherit_asset" model="ir.ui.view">
+        <field name="name">maintenance.equipment.view.tree.inherit.hr</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="asset_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo> 

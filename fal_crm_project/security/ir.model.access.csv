@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.fal_expertise_skill_tag_user,fal.expertise.skill.tag user,model_fal_expertise_skill_tag,base.group_user,1,1,1,1
+access.fal_lead_expertise_skill_tag_line_user,fal.lead.expertise.skill.tag.line user,model_fal_lead_expertise_skill_tag_line,base.group_user,1,1,1,1
+access_fal_offer_category_tag_user,fal.offer.category.tag.user,model_fal_offer_category_tag,base.group_user,1,1,1,1
+access_fal_crm_project_team_user,fal.crm.project.team.user,model_fal_crm_project_team,base.group_user,1,1,1,1
+access.fal_expertise_skill_tag_portal,fal.expertise.skill.tag portal,model_fal_expertise_skill_tag,base.group_portal,1,0,0,0
+access.fal_lead_expertise_skill_tag_line_portal,fal.lead.expertise.skill.tag.line portal,model_fal_lead_expertise_skill_tag_line,base.group_portal,1,0,0,0
+access_fal_offer_category_tag_portal,fal.offer.category.tag.portal,model_fal_offer_category_tag,base.group_portal,1,0,0,0
+access_fal_crm_project_team_portal,fal.crm.project.team.portal,model_fal_crm_project_team,base.group_portal,1,0,0,0
+access_fal_crm_project_team_type_all,fal.crm.project.team.type.all,model_fal_crm_project_team_type,base.group_user,1,1,1,1

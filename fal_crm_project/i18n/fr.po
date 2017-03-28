@@ -1,0 +1,861 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* fal_crm_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-01 10:49+0000\n"
+"PO-Revision-Date: 2016-12-01 12:05+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 1.8.11\n"
+
+#. module: fal_crm_project
+#: model:mail.template,body_html:fal_crm_project.email_template_survey_form_question
+msgid ""
+"\n"
+"                        <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Come you to submit a question to the Energie Partner CAM space</p>\n"
+"                        <p>\n"
+"                            <b><u>Recap your request</u></b><br/>\n"
+"                            (recovery of form fields)\n"
+"                        </p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Subject: ${object.name}</li>\n"
+"                                <li>Your Question: <br/> ${object.description}</li>\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Your request is tranmise the teams CAM Energy , who will address the best shots delays . See you soon on our partner space <br/>\n"
+"                            Reseller CAM Energie\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Partner Area CAM Energie<br/>\n"
+"                            espacepartenaire@cam-service.fr<br/>\n"
+"                            <img src=\"/gleize_website_ext/static/src/img/cam_company_logo.png\"/>\n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+msgstr ""
+"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                        </p><div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">Vous venez de soumettre une question sur l'espace Partenaire CAM Energie</p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            <b style=\"font-weight:700;\"><u>Récapitulatif de votre demande</u></b><br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                        </p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            </p><ul style=\"margin:0px 0 9px 0;\">\n"
+"                                <li>Sujet: ${object.name}</li>\n"
+"                                <li>Question posée: <br><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"> ${object.description}</p></li>\n"
+"                            </ul>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            Votre demande est transmise aux équipes de CAM Energie, qui la traiteront dans les meilleurs délais. <br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            A bientôt sur notre espace Partenaire.\n"
+"                        </p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            Espace Partenaire CAM Energie<br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            espacepartenaire@cam-service.fr<br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            <img src=\"/gleize_website_ext/static/src/img/cam_company_logo.png\" style=\"vertical-align:middle;border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;\">\n"
+"                        </p>\n"
+"                    </div>\n"
+"        t<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p>"
+
+#. module: fal_crm_project
+#: model:mail.template,body_html:fal_crm_project.email_template_survey_form
+msgid ""
+"\n"
+"                    <div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p>Interest just submitted one or more project (s ) The named on the CAM energy partner space</p>\n"
+"                        <p>\n"
+"                            <b><u>Recap your request</u></b><br/>\n"
+"                            (recovery of form fields)\n"
+"                        </p>\n"
+"                        <p style=\"border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            <ul>\n"
+"                                <li>Project: ${object.name}</li>\n"
+"                                <li>Project Description: <br/> ${object.description}</li>\n"
+"                            </ul>\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Your request is tranmise the teams CAM Energy , who will address the best shots delays . See you soon on our partner space <br/>\n"
+"                            Reseller CAM Energie\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Partner Area CAM Energie<br/>\n"
+"                            espacepartenaire@cam-service.fr<br/>\n"
+"                            <img src=\"/gleize_website_ext/static/src/img/cam_company_logo.png\"/>\n"
+"                        </p>\n"
+"                    </div>\n"
+"                \n"
+"            "
+msgstr ""
+"<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                    </p><div style=\"font-family: 'Lucica Grande', Ubuntu, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(34, 34, 34); background-color: #FFF; \">\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">Vous venez de soumettre un ou plusieurs projet(s) à étudier sur l'espace Partenaire CAM Energie.</p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            <b style=\"font-weight:700;\"><u>Récapitulatif de votre demande</u></b><br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                        </p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;border-left: 1px solid #8e0000; margin-left: 30px;\">\n"
+"                            </p><ul style=\"margin:0px 0 9px 0;\">\n"
+"                                <li>Projet: ${object.name}</li>\n"
+"                                <li>Description du projet: <br><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"> ${object.description}</p></li>\n"
+"                            </ul>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                             Votre demande est transmise aux équipes de CAM Energie, qui la traiteront dans les meilleurs délais. <br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            A bientôt sur notre espace Partenaire.\n"
+"                        </p>\n"
+"                        <p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            Espace Partenaire CAM Energie<br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            espacepartenaire@cam-service.fr<br></p><p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\">\n"
+"                            <img src=\"/gleize_website_ext/static/src/img/cam_company_logo.png\" style=\"vertical-align:middle;border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;border-top-width:0px;\">\n"
+"                        </p>\n"
+"                    </div>\n"
+"        t<p style=\"margin:0px 0px 9px 0px;font-size:13px;font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\"></p>"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_issue_count
+msgid "# Issues"
+msgstr "Nb. d'incidents"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "<span class=\"oe_grey\"> at </span>"
+msgstr "<span class=\"oe_grey\"> à </span>"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_account_analytic_id
+msgid "Account Analytic"
+msgstr "Compte Analytique"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_child_complete_ids
+msgid "Account Hierarchy"
+msgstr "Structure hiérarchique comptable"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_activity_id
+msgid "Activity"
+msgstr "Activité"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_activity_follow_up
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Activity Follow Up"
+msgstr "Suivi d'activité"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Activity Follow-up"
+msgstr "Fil d'actualités"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_account_analytic_account
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_fal_analytic_account_id
+msgid "Analytic Account"
+msgstr "Compte Analytique"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Back to Offer Made"
+msgstr "Revenir à Offre présentée"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Back to Offer Sent"
+msgstr "Revenir à Offre envoyée"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Back to Technical Meeting To Do"
+msgstr "Revenir à Effectuer le RDV Tech."
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Back to To Quote"
+msgstr "Revenir à A chiffrer"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_business_unit_id
+msgid "Business Unit"
+msgstr "Business Unit"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_level_4_hide_flag
+msgid "Button Hide"
+msgstr "Bouton caché"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_crm_opportunity_report
+msgid "CRM Opportunity Analysis"
+msgstr "Analyse des projets clients CRM"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fal_crm_project
+#: model:ir.actions.server,name:fal_crm_project.cancel_opportunity
+msgid "Cancel This Opportunity"
+msgstr "Annuler ce Projet Client"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_cancelled
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_child_ids
+msgid "Child Accounts"
+msgstr "Comptes enfant"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Children"
+msgstr "Enfants"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_child_ids
+msgid "Childs"
+msgstr "Enfants"
+
+#. module: fal_crm_project
+#: model:crm.team,name:fal_crm_project.fal_classic_sales_team
+msgid "Classic Sales"
+msgstr "Vente Classique"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+msgid "Close"
+msgstr "Fermer"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_code
+msgid "Code"
+msgstr "Code"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_comment
+msgid "Comment"
+msgstr "Commentaires"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_company_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: fal_crm_project
+#: selection:fal.crm.project.team,type:0
+msgid "Competitor"
+msgstr "Concurrent"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+msgid "Convert to Customer Project"
+msgstr "Convertir en Projet Client"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+msgid "Create a Customer and Close"
+msgstr "Créer un Prospect et Clôturer"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_create_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_create_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_create_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_create_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_create_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_create_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_create_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_create_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_partner_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_customer_agreement
+msgid "Customer Agreement"
+msgstr "Accord Client"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_property_stock_customer
+msgid "Customer Location"
+msgstr "Emplacement Client"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_activity_follow_up_search_view_crm_project
+msgid "Customer Project Not Canceled, Not Lost, Not Won"
+msgstr "Projet Client Non Annulé, Non Gagné, Non Gagné"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_fal_customer_project_type_id
+msgid "Customer Project Type"
+msgstr "Type de Projet client"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,help:fal_crm_project.fal_expertise_skill_tags_action
+msgid "Define Expertise Skill Tag in here."
+msgstr "Définissez votre type de Projet ici."
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,help:fal_crm_project.fal_offer_category_tags_action
+msgid "Define Offer Category tag in here."
+msgstr "Définir le type d'offre ici."
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,help:fal_crm_project.fal_crm_project_team_type_action
+msgid "Define Project Team type in here."
+msgstr "Définir votre Equipe Projet ici"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_task_fal_departure_date
+msgid "Departure Date"
+msgstr "Date de départ"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_display_name
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_display_name
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_display_name
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_display_name
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: fal_crm_project
+#: selection:fal.activity.follow.up,state:0
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Done"
+msgstr "Terminé"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_expected_date
+msgid "Expected Date"
+msgstr "Date prévue"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Expertise Skill"
+msgstr "Type de Projet"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_expertise_skill_tag
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_expertise_skill_tag_id
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_expertise_skill_tags_form
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_expertise_skill_tags_tree
+msgid "Expertise Skill Tag"
+msgstr "Tag Type de Projet"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,name:fal_crm_project.fal_expertise_skill_tags_action
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_lead_fal_expertise_skill_tags_ids
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_offer_category_tag_expertise_skill_tag_ids
+#: model:ir.ui.menu,name:fal_crm_project.fal_expertise_skill_tag_setting
+msgid "Expertise Skill Tags"
+msgstr "Tags Type de Projet"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_complete_name
+msgid "Full Name"
+msgstr "Nom complet"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Get Customer Agreement"
+msgstr "Obtient l'Accord Client"
+
+#. module: fal_crm_project
+#: model:crm.team,name:fal_crm_project.fal_hotline_sales_team
+msgid "Hotline Sales"
+msgstr "Vente Plateforme"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_id_7806
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_id
+msgid "ID"
+msgstr "ID"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_stage_in_qualification
+msgid "In Qualification"
+msgstr "En Qualification"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_fal_is_affaire
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_is_affaire
+msgid "Is Affaire?"
+msgstr "Est une Affaire?"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_fal_is_chiffrage
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_is_chiffrage
+msgid "Is Chiffrage?"
+msgstr "Est un Chiffrage?"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_fal_is_phase
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_is_phase
+msgid "Is Phase?"
+msgstr "Est une Phase?"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_is_stage_customer_agreement
+msgid "Is Stage Customer Agreement"
+msgstr "Est l'étape Accord Client"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_is_stage_offer_made
+msgid "Is Stage Offer Made"
+msgstr "Est l'étape Offre effectuée"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_is_stage_offer_sent
+msgid "Is Stage Offer Sent"
+msgstr "Est l'étape Offre envoyée"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_is_stage_to_quote
+msgid "Is Stage To Quote"
+msgstr "Est l'étape A chiffrer"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_stage_fal_is_stage_won
+msgid "Is Stage Won"
+msgstr "Est l'étape Gagné"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_sustainable_building
+msgid "Is Suistainable Building"
+msgstr "Est un Bâtiment Durable"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_id_is_cam
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_is_cam
+msgid "Is Type CAM"
+msgstr "Est de type CAM"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up___last_update
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team___last_update
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type___last_update
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag___last_update
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line___last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_write_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_write_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_write_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_write_uid
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_write_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_write_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_write_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_write_date
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_lead_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_lead_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_crm_lead_id
+msgid "Lead"
+msgstr "Piste"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_lead_expertise_skill_tag_line
+msgid "Lead Expertise Skill Tag Line"
+msgstr "Tag Compétence d'Expertise"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_lead_fal_lead_expertise_tag_line_ids
+msgid "Lead Expertise Tag Line"
+msgstr "Ligne de piste d'expertise"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_opportunity_report_fal_lead_sales_person_id
+msgid "Lead Salesperson"
+msgstr "Commercial"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_crm_lead2opportunity_partner
+msgid "Lead To Opportunity Partner"
+msgstr "Conversion d'une piste en partenaire de Projet Client"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Piste/Projet Client"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,help:fal_crm_project.field_fal_lead_expertise_skill_tag_line_partner_id
+msgid "Linked partner (optional). Usually created when converting the lead."
+msgstr "Partenaire associé (optionnel). Habituellement il est créé lors de la conversion d'une piste."
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Make Appointment"
+msgstr "Effectuer le RDV Tech."
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Make Offer"
+msgstr "Présente l'offre"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_partner_ids
+msgid "Member"
+msgstr "Membre"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_name
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fal_crm_project
+#: selection:fal.activity.follow.up,state:0
+msgid "Not Done"
+msgstr "Pas Fini"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_name
+msgid "Note"
+msgstr "Note"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Offer Category"
+msgstr "Catégorie d'offre"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_offer_category_tag
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_offer_category_tag_form
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_offer_category_tag_tree
+msgid "Offer Category Tag"
+msgstr "Tag Type d'offre"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,name:fal_crm_project.fal_offer_category_tags_action
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_fal_offer_category_tags_ids
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_fal_offer_category_tags_ids
+#: model:ir.ui.menu,name:fal_crm_project.fal_offer_category_tag_setting
+msgid "Offer Category Tags"
+msgstr "Tags Catégorie d'offre"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_offer_made
+msgid "Offer Made"
+msgstr "Offre présentée"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_offer_sent
+msgid "Offer Sent"
+msgstr "Offre envoyée"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Offre"
+msgstr "Offre"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_fal_old_code
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_old_code
+msgid "Old Ref."
+msgstr "Référence historique"
+
+#. module: fal_crm_project
+#: code:addons/fal_crm_project/models/crm_lead.py:60
+#, python-format
+msgid "Only Customer Project can be cancelled!"
+msgstr "Seulement les Projets Clients peuvent être annulés!"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_fal_lead_ids
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_lead_ids
+msgid "Opportunity"
+msgstr "Projet Client"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_origin_lead_id
+msgid "Origin Lead"
+msgstr "Origine de la piste"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_parent_id
+msgid "Parent"
+msgstr "Parent"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_parent_id
+msgid "Parent Analytic Account"
+msgstr "Compte Analytique parent"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Prepare Technical Meeting"
+msgstr "Affecter"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_price
+msgid "Price"
+msgstr "Prix"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_project_project
+msgid "Project"
+msgstr "Projet"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,name:fal_crm_project.action_project_chiffrage_tree_view
+msgid "Project Chiffrage"
+msgstr "Projet Chiffrage"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_crm_lead_fal_project_ids
+msgid "Project List"
+msgstr "Liste de Projets"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,name:fal_crm_project.fal_crm_project_team_type_action
+#: model:ir.ui.menu,name:fal_crm_project.fal_project_team_type_menu
+#: model:ir.ui.view,arch_db:fal_crm_project.fal_crm_project_team_type_form
+msgid "Project Team Type"
+msgstr "Type d'Equipe projet"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_project_template_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_project_template_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_fal_project_template_id
+msgid "Project Template"
+msgstr "Modèle de Projet"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_project_ids
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_project_ids
+msgid "Projects"
+msgstr "Projets"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_realized_date
+msgid "Realized Date"
+msgstr "Date réalisée"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_user_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_responsible_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_responsible_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_crm_team
+msgid "Sales Team"
+msgstr "Équipe commerciale"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Send Offer"
+msgstr "Envoyer le devis au client"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_sequence
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_expertise_skill_tag_sequence
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_offer_category_tag_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Set to Cancel"
+msgstr "Annuler"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Set to Close"
+msgstr "Fermer"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Set to Draft"
+msgstr "Mettre en Brouillon"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Set to In Progress"
+msgstr "Mettre En cours"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.edit_project_falcrmpro
+msgid "Set to Pre-Affaire"
+msgstr "Mettre en Pré-Affaire"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_stage_id
+msgid "Stage"
+msgstr "Étape"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_crm_stage
+msgid "Stage of case"
+msgstr "Etape de cas"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_leads_falcrmpro
+msgid "Start Qualification"
+msgstr "Démarre la qualification"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_activity_follow_up_state
+msgid "Status"
+msgstr "Statut"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_subscription_ids
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_subscription_count
+msgid "Subscriptions"
+msgstr "Abonnements"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_project_task
+msgid "Task"
+msgstr "Tâche"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_task_needaction_count
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: fal_crm_project
+#: model:ir.ui.view,arch_db:fal_crm_project.crm_case_form_view_oppor_falcrmpro
+msgid "Team"
+msgstr "Equipe"
+
+#. module: fal_crm_project
+#: selection:fal.crm.project.team,type:0
+msgid "Team CAM"
+msgstr "Equipe CAM"
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_technical_meeting
+msgid "Technical meeting To Do"
+msgstr "RDV tech. à faire"
+
+#. module: fal_crm_project
+#: code:addons/fal_crm_project/models/crm_lead.py:259
+#, python-format
+msgid "This Leads doesnt have Chiffrage Project!"
+msgstr "Cette piste n'a pas de projet de type Chiffrage!"
+
+#. module: fal_crm_project
+#: model:ir.actions.act_window,help:fal_crm_project.action_project_chiffrage_tree_view
+msgid "This is Project Chiffrage."
+msgstr "C'est un projet Chiffrage"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,help:fal_crm_project.field_res_users_property_stock_customer
+msgid "This stock location will be used, instead of the default one, as the destination location for goods you send to this partner"
+msgstr "Cette zone de stockage sera utilisée, au lieu de la zone par défaut, comme emplacement de destination pour les biens que vous envoyez à ce partenaire."
+
+#. module: fal_crm_project
+#: model:ir.model.fields,help:fal_crm_project.field_res_users_property_stock_supplier
+msgid "This stock location will be used, instead of the default one, as the source location for goods you receive from the current partner"
+msgstr "Cette zone de stockage sera utilisée, au lieu de la zone par défaut, comme emplacement source pour les biens reçus du partenaire courant."
+
+#. module: fal_crm_project
+#: model:crm.stage,name:fal_crm_project.fal_to_quote
+msgid "To Quote"
+msgstr "A chiffrer"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_type_id
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_lead_expertise_skill_tag_line_type
+msgid "Type"
+msgstr "Type"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,help:fal_crm_project.field_fal_lead_expertise_skill_tag_line_type
+msgid "Type is used to separate Leads and Opportunities"
+msgstr "Le type est utilisé pour différencier les pistes des Projets Clients"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_fal_crm_project_team_uom_id
+msgid "UOM"
+msgstr "UdM"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_res_users_property_stock_supplier
+msgid "Vendor Location"
+msgstr "Adresse du vendeur"
+
+#. module: fal_crm_project
+#: code:addons/fal_crm_project/models/crm_lead.py:58
+#, python-format
+msgid "You cannot cancel a customer project with quotation not canceled or not lost"
+msgstr "Vous ne pouvez pas annuler un Projet Client qui a un devis autre qu'annulé ou perdu."
+
+#. module: fal_crm_project
+#: model:mail.template,subject:fal_crm_project.email_template_survey_form
+#: model:mail.template,subject:fal_crm_project.email_template_survey_form_question
+msgid "Your request to the CAM energy partner space"
+msgstr "Votre demande sur l'espace partenaire CAM Energie"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_crm_project_team
+msgid "fal.crm.project.team"
+msgstr "fal.crm.project.team"
+
+#. module: fal_crm_project
+#: model:ir.model,name:fal_crm_project.model_fal_crm_project_team_type
+msgid "fal.crm.project.team.type"
+msgstr "fal.crm.project.team.type"
+
+#. module: fal_crm_project
+#: model:ir.model.fields,field_description:fal_crm_project.field_account_analytic_account_project_count
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_project_count
+#: model:ir.model.fields,field_description:fal_crm_project.field_project_project_subscription_count
+msgid "unknown"
+msgstr "inconnu"

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="fal_activity_follow_up_tree_view">
+            <field name="name">fal.activity.follow.up.tree.view</field>
+            <field name="model">fal.activity.follow.up</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="lead_id"/>
+                    <field name="name"/>
+                    <field name="active" invisible="1"/>
+                    <field name="activity_id"/>
+                    <field name="user_id"/>
+                    <field name="account_analytic_id" invisible="1"/>
+                    <field name="duration"/>
+                    <field name="expected_date"/>
+                    <field name="realized_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fal_activity_follow_up_search_view" model="ir.ui.view">
+            <field name="name">Activity Followup Search View</field>
+            <field name="model">fal.activity.follow.up</field>
+            <field name="arch" type="xml">
+                <search string="Search Activity">
+                    <field name="name"/>
+                    <field name="lead_id"/>
+                    <field name="user_id"/>
+                    <field name="account_analytic_id"/>
+                    <separator />
+                    <filter string="My Activity Followup"
+                            name="assigned_to_me"
+                            domain="[('user_id','=',uid)]"
+                            help="Activity that are assigned to me"/>
+                    <separator/>
+                    <filter string="Today Activities" name="today"
+                            domain="[('expected_date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="This Week Activities" name="this_week"
+                            domain="['&amp;', ('expected_date', '&gt;=', context_today().strftime('%Y-%m-%d')),
+                                     ('expected_date', '&lt;=', (context_today()+datetime.timedelta(days=7)).strftime('%Y-%m-%d'))
+                            ]"/>
+                    <filter string="Overdue Activities" name="overdue"
+                            domain="[('expected_date', '&lt;', context_today().strftime('%Y-%m-%d'))]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fal_activity_follow_up_action">
+            <field name="name">Activity Follow Up</field>
+            <field name="res_model">fal.activity.follow.up</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{
+                    'search_default_assigned_to_me': 1,
+                    'search_default_customer_project_not_canceled_lost_won': 1
+                }
+            </field>
+            <field name="domain">[('type', '=', 'crm')]</field>
+            <field name="help" type="html">
+            <p>
+    Define activity follow up here.
+            </p>
+            </field>
+        </record>
+
+        <record id="fal_activity_follow_up_analysis_action" model="ir.actions.act_window">
+            <field name="name">Activities Analysis</field>
+            <field name="res_model">fal.activity.follow.up</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">pivot,graph</field>
+            <field name="context">{}</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <menuitem id="fal_activity_follow_up_menu" name="Follow Up Activities" sequence="13"
+            parent="base.menu_sales" action="fal_activity_follow_up_action" />
+
+    </data>
+</openerp>
